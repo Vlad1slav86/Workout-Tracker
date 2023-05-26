@@ -1,4 +1,37 @@
-/* REMOVE THIS AND ADD YOUR OWN CSS AS NEEDED */
-* {
-	outline: red dashed 2px;
-}
+header {
+	background-color: rgb(20, 155, 218);
+	padding: 40px;
+  }
+  
+  nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+  }
+  
+  nav li {
+	margin-right: 10px;
+  }
+  
+  nav li:last-child {
+	margin-right: 0;
+  }
+  
+  nav a {
+	display: block;
+	padding: 8px 12px;
+	text-decoration: none;
+	color: #333;
+	border-radius: 5px;
+	font-size: 30px;
+  }
+  
+  nav a:hover {
+	background-color: #333;
+	color: #fff;
+  }
+  
+  body {
+	background-color: #fff;
+  }
