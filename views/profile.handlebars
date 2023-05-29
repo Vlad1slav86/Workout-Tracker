@@ -1,0 +1,56 @@
+
+<div class="card">
+    <div class="card_background_img"></div>
+    <div class="card_profile_img"></div>
+    <div class="user_details">
+        <h3 id="myname">{{ user.name }}</h3>
+    </div>
+    <div class="msgbtn">
+        <p class="message">message</p>
+    </div>
+</div>
+
+<body>
+    <nav>
+      <div class="navbar">
+        <div class="container nav-container">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>  
+          <div class="logo">
+            <h1>Navbar</h1>
+          </div>
+          <div class="menu-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">blogs</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">contact</a></li>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+    <h3 id="myemail">{{ user.email }}</h3>
+    <button id="logout">Logout</button>
+    
+
+        <button class="deletebtn" id="{{ id }}">Delete</button>
+
+        <script src="./js/logout.js"></script>
+        <script src="./js/delete-profile.js"></script>
+        <script src="./js/myprofile.js"></script>
