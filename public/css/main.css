@@ -43,28 +43,26 @@ header {
 }
 
 .card{
-	width: 1500px;
-	height:1000px;
+	width: 1200px;
+	height:1150px;
 	background-color: #fff;
 	margin: 0 auto;
 	margin-top:-80px;
-	box-shadow: 0px 1px 3px 0px 
+	box-shadow: 0px 1px 50px 0px 
 	rgba(0, 0, 0, 0.15);
 }
 
 .card_profile_img {
-	width:247px;
-	height:247px;
+	width: 386px;
+	height: 461px;
 	background-color: #868d9b;
 	background-repeat: no-repeat;
 	background-size:cover;
 	background-position:center;
-	border: 2px solid #ffffff;
-	border-radius:139px;
-	margin:0 auto;
-	margin-top:-122px;
+	border-top: 55px solid #ffffff;
+	margin-left: 50px;
 }
-
+/* 
 .card_background_img{
 	width:100%;
 	height: 350px;
@@ -74,13 +72,13 @@ header {
 	background-size:cover;
 	background-position:center;
 
-}
+} */
 
 .user_details h3{
 	margin-top:10px
 }
 
-.msgbtn{
+/* .msgbtn{
 	padding:16px;
 	height:64px;
 	margin-top: 345px;
@@ -96,11 +94,11 @@ header {
 	font-weight:600;
 	text-transform:uppercase;
 	
-}
-
+} */
+/* 
 .message{
 	margin-top:18px;
-}
+} */
 
 .container {
   max-width: 1050px;
@@ -110,7 +108,6 @@ header {
 
 .navbar {
   width: 100%;
-  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
 }
 
 .nav-container {
@@ -142,8 +139,8 @@ header {
 
 .nav-container {
   display: block;
-  position: relative;
   height: 60px;
+  align-items: start;
 }
 
 .nav-container .checkbox {
@@ -195,16 +192,14 @@ header {
 
 .navbar .menu-items {
   padding-top: 120px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
   height: 100vh;
   width: 100%;
   transform: translate(-150%);
   display: flex;
   flex-direction: column;
-  margin-left: -40px;
+  margin-left: -300px;
   padding-left: 50px;
   transition: transform 0.5s ease-in-out;
-  text-align: center;
 }
 
 .navbar .menu-items li {
@@ -216,7 +211,7 @@ header {
 .logo {
   position: absolute;
   top: 5px;
-  right: 15px;
+  right: 20px;
   font-size: 1.2rem;
   color: #0e2431;
 }
@@ -239,4 +234,77 @@ header {
 
 .nav-container input[type="checkbox"]:checked ~ .logo{
   display: none;
+}
+
+#logout{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+  text-decoration: none;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+
+}
+
+#dlt{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  text-decoration: none;
+}
+
+
+.profilebck{
+  /* background-image: linear-gradient( rgb(0, 0, 255), rgb(255, 255, 255)); */
+  background-color: rgb(205, 212, 233);
+}
+
+.user_details{
+  text-align:center;
+  margin-top: -482px;
+  margin-left: -69px;
+}
+.user_detail{
+  text-align:center;
+  margin-top: 40px;
+  margin-left: -114px;
+}
+.user_number{
+  text-align:center;
+  margin-top: 25px;
+  margin-left: 510px;
+  display:flex
+}
+.user_wrkout{
+  text-align:center;
+  margin-top: 12px;
+  margin-left: 510px;
+  display: flex;
+}
+
+.usr{
+  height: 23px;
+  margin-top: 21px;
+}
+.usrbtn{
+  height: 29.5px;
+  margin-top: 21px;
+}
+.user_diet{
+  text-align:center;
+  margin-top: 12px;
+  margin-left: 510px;
+  display: flex;
 }

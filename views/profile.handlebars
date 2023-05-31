@@ -1,16 +1,7 @@
+    <link rel="stylesheet" href="../public/css/profile.css">
 
-<div class="card">
-    <div class="card_background_img"></div>
-    <div class="card_profile_img"></div>
-    <div class="user_details">
-        <h3 id="myname">{{ user.name }}</h3>
-    </div>
-    <div class="msgbtn">
-        <p class="message">message</p>
-    </div>
-</div>
 
-<body>
+<body class="profilebck">
     <nav>
       <div class="navbar">
         <div class="container nav-container">
@@ -21,14 +12,15 @@
               <span class="line line3"></span>
             </div>  
           <div class="logo">
-            <h1>Navbar</h1>
+            <h1>Workout-Tracker</h1>
           </div>
           <div class="menu-items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">blogs</a></li>
-            <li><a href="#">portfolio</a></li>
-            <li><a href="#">contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/workouts">Workouts</a></li>
+            <li><a href="/diet">Diet</a></li>
+            <li><a href="/Community">Community</a></li>
+            <li><button id="logout">Logout</button></li>
+            <li><button id="dlt" class="deletebtn" id="{{ id }}">Delete</button></li>
           </div>
         </div>
       </div>
@@ -40,16 +32,46 @@
 
 
 
+<div class="card">
+    <div class="card_background_img"></div>
+    <div class="card_profile_img"></div>
+    <div class="user_details">
+        <h2>Full Name:</h2>
+        <h3 id="myname">{{ user.name }}</h3>
+    </div>
+    <div class="user_detail">
+        <h2>Email:</h2>
+        <h3 id="myemail">{{ user.email }}</h3>    
+    </div>
+     <div class="user_number">
+        <h2>Phone:</h2>
+        <input class="usr"><button class="usrbtn">Upload</button></input>   
+    </div>
+     <div class="user_wrkout">
+        <h2>Favorite Workout:</h2>
+        <input class="usr"><button class="usrbtn">Upload</button></input>   
+    </div>
+      <div class="user_diet">
+        <h2>Favorite Diet:</h2>
+        <input class="usr"><button class="usrbtn">Upload</button></input>   
+    </div>
+      <div class="user_diet">
+        <h2>Relationship Status:</h2>
+        <input class="usr"><button class="usrbtn">Upload</button></input>   
+    </div>
+    <div class="msgbtn">
+        {{!-- <p class="message">message</p> --}}
+    </div>
+</div>
 
 
 
 
 
-    <h3 id="myemail">{{ user.email }}</h3>
-    <button id="logout">Logout</button>
+
+
     
 
-        <button class="deletebtn" id="{{ id }}">Delete</button>
 
         <script src="./js/logout.js"></script>
         <script src="./js/delete-profile.js"></script>
