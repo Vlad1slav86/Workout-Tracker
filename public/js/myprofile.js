@@ -1,7 +1,9 @@
-const { response } = require('express');
+const newFormHandler = async (event) => {
+  event.preventDefault()
 
-const myPro = await ('/api/myprofile', {
-  method: 'GET',
+if (name && email){
+const response = await ('/api/myprofile', {
+  method: 'POST',
   body: JSON.stringify({name, email}),
   headers: {
     'content-type': 'application/json'
@@ -12,4 +14,8 @@ if(response.ok){
 } else {
   alert('Failed to create Profile');
 }
-
+}
+}
+// savedForm = document.querySelector("#saved-form")
+// file = document.querySelector(".file")
+  

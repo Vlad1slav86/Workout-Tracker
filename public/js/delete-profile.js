@@ -8,7 +8,7 @@ deleteBtn.addEventListener('click', async function(event){
     
   alert('id', id);
 
-  const response = await fetch (`/api/user/${id}`,{
+  const response = await fetch (`/api/${id}`,{
     method: 'DELETE'
   });
   if(response.ok){

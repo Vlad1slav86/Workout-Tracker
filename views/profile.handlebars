@@ -1,4 +1,3 @@
-    <link rel="stylesheet" href="../public/css/profile.css">
 
 
 <body class="profilebck">
@@ -34,7 +33,10 @@
 
 <div class="card">
     <div class="card_background_img"></div>
-    <div class="card_profile_img"></div>
+    <div class="card_profile_img">
+      <input type="file" class="file" accept="image/png", "image/jpeg", "image/jpg">
+
+    </div>
     <div class="user_details">
         <h2>Full Name:</h2>
         <h3 id="myname">{{ user.name }}</h3>
@@ -57,7 +59,7 @@
     </div>
       <div class="user_diet">
         <h2>Relationship Status:</h2>
-        <input class="usr"><button class="usrbtn">Upload</button></input>   
+        <input class="usr"><button class="usrbtn">Upload</button>   
     </div>
     <div class="msgbtn">
         {{!-- <p class="message">message</p> --}}
