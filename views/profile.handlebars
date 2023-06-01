@@ -19,7 +19,7 @@
             <li><a href="/diet">Diet</a></li>
             <li><a href="/Community">Community</a></li>
             <li><button id="logout">Logout</button></li>
-            <li><button id="dlt" class="deletebtn" id="{{ id }}">Delete</button></li>
+            <li><button id="dlt" class="deletebtn" data-id="{{ user.id }}">Delete</button></li>
           </div>
         </div>
       </div>
@@ -29,44 +29,45 @@
 
 
 
-
-
 <div class="card">
-    <div class="card_background_img"></div>
+    <div class="card_background_img">
+    </div>
     <div class="card_profile_img">
       <input type="file" class="file" accept="image/png", "image/jpeg", "image/jpg">
-
     </div>
+
+    
     <div class="user_details">
         <h2>Full Name:</h2>
-        <h3 id="myname">{{ user.name }}</h3>
+        <h3 id="myname">{{ name }}</h3>
     </div>
     <div class="user_detail">
         <h2>Email:</h2>
-        <h3 id="myemail">{{ user.email }}</h3>    
+        <h3 id="myemail">{{ email }}</h3>    
     </div>
+  <form class="profileform">
      <div class="user_number">
         <h2>Phone:</h2>
-        <input class="usr"><button class="usrbtn">Upload</button></input>   
+        <input class="usr" type="text"><button class="usrbtn">submit</button></input>   
+        <h3 class="usrdata"></h3>
     </div>
      <div class="user_wrkout">
         <h2>Favorite Workout:</h2>
-        <input class="usr"><button class="usrbtn">Upload</button></input>   
+        <input class="usr" type="text"><button class="usrbtn">submit</button></input>   
+        <h3 class="usrdata"></h3>
     </div>
       <div class="user_diet">
         <h2>Favorite Diet:</h2>
-        <input class="usr"><button class="usrbtn">Upload</button></input>   
+        <input class="usr" type="text"><button class="usrbtn">submit</button></input>   
+        <h3 class="usrdata"></h3>
     </div>
       <div class="user_diet">
         <h2>Relationship Status:</h2>
-        <input class="usr"><button class="usrbtn">Upload</button>   
-    </div>
-    <div class="msgbtn">
-        {{!-- <p class="message">message</p> --}}
+        <input class="usr" type="text"><button class="usrbtn">submit</button>  
+        <h3 class="usrdata"></h3>
     </div>
 </div>
-
-
+</form>
 
 
 

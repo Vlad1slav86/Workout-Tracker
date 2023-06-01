@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
+
 
 router.post('/', async (req, res) => {
   try {
@@ -55,6 +57,22 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const projectData = await User.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+
+      },
+    });
+
+    res.status(200).json(projectData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

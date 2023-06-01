@@ -20,31 +20,30 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// router.get('/myprofile', (req, res) => {
-//   res.render('profile');
-// });
+router.get('/myprofile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
 
-router.get('/myprofile', async (req, res) => {
-  try{
-    const postData = await Post.findAll({
-      include: [
-        {
-        model:User,
-        attributs:['name']
-        }
-      ]
-    })
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const user = userData.get({ plain: true });
 
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      projects, 
-      logged_in: req.session.logged_in 
+    res.render('profile', {
+      ...user,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
   }
-  });
+});
+
+// router.get('/myprofile', (req, res) => {
+//   res.render('profile');
+// });
+
+
+
   
 
 

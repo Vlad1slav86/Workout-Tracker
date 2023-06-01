@@ -30,9 +30,7 @@
 
 } */
 
-.user_details h3{
-	margin-top:10px
-}
+
 
 /* .msgbtn{
 	padding:16px;
@@ -230,12 +228,24 @@
 .user_details{
   text-align:center;
   margin-top: -482px;
-  margin-left: -69px;
+  margin-left: 509px;
+  display: flex
+;}
+.user_details h3{
+    margin-top: 24px;
+    margin-left: 10px;
+    font-size: 20px;    
 }
 .user_detail{
   text-align:center;
-  margin-top: 40px;
-  margin-left: -114px;
+  margin-top: 19px;
+  margin-left: 509px;
+  display: flex;
+}
+.user_detail h3{
+    margin-top: 24px;
+    margin-left: 10px;
+    font-size: 20px;    
 }
 .user_number{
   text-align:center;
@@ -264,3 +274,5 @@
   margin-left: 510px;
   display: flex;
 }
+
+

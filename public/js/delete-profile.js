@@ -1,17 +1,17 @@
 
-const deleteBtn = document.querySelector('.deletebtn');
-
-deleteBtn.addEventListener('click', async function(event){
-  event.preventDefault();
-
-  const id = event.target.id;
+const delBtn = async (event) => {
+  if(event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
     
-  alert('id', id);
-
-  const response = await fetch (`/api/${id}`,{
-    method: 'DELETE'
-  });
-  if(response.ok){
-    window.location.reload();
+    const response = await fetch (`/api/users/${id}`,{
+      method: 'DELETE'
+    });
+    if (response.ok) {
+      document.location.replace('/myprofile');
+    } else {
+      alert('Failed to delete user');
+    }
   }
-});
+};
+
+document.addEventListener('click', delBtn);
