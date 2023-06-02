@@ -1,4 +1,4 @@
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment} = require('../models');
 
 const router = require('express').Router();
 
@@ -50,6 +50,8 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// router.get('/workout', async (req, res) => {
+//   try {
 // router.get('/workout', async (req, res) => {
 //   try {
     
