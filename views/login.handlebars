@@ -29,6 +29,17 @@
   <button type="submit">signup</button>
 </form>
 
+  <footer>
+  <div class="footer-content">
+    <p>&copy; <span id="current-year"></span> ShapeShift. All rights reserved.</p>
+  </div>
+
+  <script>
+    var currentYear = new Date().getFullYear();
+
+    document.getElementById("current-year").textContent = currentYear;
+  </script>
+</footer>
 
 
 <script src="./js/login.js"></script>

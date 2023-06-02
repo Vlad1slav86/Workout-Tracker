@@ -58,7 +58,7 @@ header {
   
   .login-form input,
   .signup-form input {
-	width: 100%;
+	width: 10%;
 	padding: 8px;
 	border-radius: 5px;
 	border: 1px solid #ccc;
@@ -82,7 +82,7 @@ header {
   }
   
   main {
-    background-image: url("/public/images/Bckg-Img.png");
+    background-image: url("/public/images/home/Bckg-Img.png");
     background-size: cover;
     background-position: center;
 }

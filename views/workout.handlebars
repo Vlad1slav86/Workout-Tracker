@@ -19,7 +19,7 @@
     </header>
 
     <main>
-        <h1>Workout Tracker</h1>
+        <h1>ShapeShifter</h1>
         <div class="workout-container">
             <!-- Display workout details here -->
             <h2>{{workoutName}}</h2>
@@ -37,9 +37,17 @@
         </div>
     </main>
 
-    <footer>
-        <!-- Footer content here -->
-    </footer>
+     <footer>
+  <div class="footer-content">
+    <p>&copy; <span id="current-year"></span> ShapeShift. All rights reserved.</p>
+  </div>
+
+  <script>
+    var currentYear = new Date().getFullYear();
+
+    document.getElementById("current-year").textContent = currentYear;
+  </script>
+</footer>
 
     <script src=""></script>
 </body>
