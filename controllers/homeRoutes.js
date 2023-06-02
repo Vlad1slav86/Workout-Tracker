@@ -27,30 +27,34 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/post/:id', async (req, res) => {
-  try {
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name']
-        },
-        {
-          model: Comment,
-          include: [ User ],
-          attributes: ['name']
-        }
-      ]
-    });
+// router.get('/post/:id', async (req, res) => {
+//   try {
+//     const postData = await Post.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name']
+//         },
+//         {
+//           model: Comment,
+//           include: [ User ],
+//           attributes: ['name']
+//         }
+//       ]
+//     });
 
-  } catch (error) {
-    res.status(500).json(error.message)
-  }
-});
+//     const posts = postData.map((post) => post.get({ plain: true }));
+
+//     re
+
+//   } catch (error) {
+//     res.status(500).json(error.message)
+//   }
+// });
 
 router.get('/workout', async (req, res) => {
   try {
-    const catData = await Post.findAll({
+    const postData = await Post.findAll({
       where: {
         category_id: 1
       }
@@ -71,7 +75,7 @@ router.get('/workout', async (req, res) => {
 
 router.get('/diet', async (req, res) => {
   try {
-    const catData = await Post.findAll({
+    const postData = await Post.findAll({
       where: {
         category_id: 2
       }
@@ -92,7 +96,7 @@ router.get('/diet', async (req, res) => {
 
 router.get('/community', async (req, res) => {
   try {
-    const catData = await Post.findAll({
+    const postData = await Post.findAll({
       where: {
         category_id: 3
       }

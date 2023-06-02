@@ -1,3 +1,5 @@
+const router = require('express').Router();
+
 router.post('/', async (req, res) => {
     // function base64_encode(file) {
     //     // read binary data
@@ -23,3 +25,5 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;

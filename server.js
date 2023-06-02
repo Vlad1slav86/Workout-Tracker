@@ -8,6 +8,7 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const fileUpload = require('express-fileupload');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
