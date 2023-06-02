@@ -1,0 +1,1 @@
+INSERT INTO category(category_name) VALUES ('workout'), ('diet'), ('community');
