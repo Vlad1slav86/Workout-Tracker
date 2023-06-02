@@ -1,4 +1,4 @@
-const { Post, User, Comment} = require('../models');
+const { Post, User, Comment } = require('../models');
 
 const router = require('express').Router();
 
@@ -11,11 +11,12 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attribute: ['name'],
+          attributes: ['name'],
         },
       ],
     });
 
+    const posts = postData.map((post) => post.get({ plain: true }));
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('homepage', {
@@ -25,40 +26,96 @@ router.get('/', async (req, res) => {
 
   } catch (err) {
     res.status(500).json(err);
-    res.status(200).json(postData);
-
   }
 });
 
-router.get('/post/:id', async (req, res) => {
-  try {
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attribute: ['name']
-        },
-        {
-          model: Comment,
-          include: [ User ],
-          attribute: ['name']
-        }
-      ]
-    });
-  } catch (error) {
-    
-  }
-});
+// router.get('/post/:id', async (req, res) => {
+//   try {
+//     const postData = await Post.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name']
+//         },
+//         {
+//           model: Comment,
+//           include: [ User ],
+//           attributes: ['name']
+//         }
+//       ]
+//     });
 
-// router.get('/workout', async (req, res) => {
-//   try {
-// router.get('/workout', async (req, res) => {
-//   try {
-    
+//     const posts = postData.map((post) => post.get({ plain: true }));
+
+//     re
+
 //   } catch (error) {
-    
+//     res.status(500).json(error.message)
 //   }
-// })
+// });
+
+router.get('/workout', async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: {
+        category_id: 1
+      }
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('workout', {
+      posts,
+      category_id: 1,
+      logged_in: req.session.logged_in
+    });
+
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
+
+router.get('/diet', async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: {
+        category_id: 2
+      }
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('diet', {
+      posts,
+      category_id: 2,
+      logged_in: req.session.logged_in
+    });
+
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+})
+
+router.get('/community', async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: {
+        category_id: 3
+      }
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('community', {
+      posts,
+      category_id: 3,
+      logged_in: req.session.logged_in
+    });
+
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
@@ -93,11 +150,3 @@ router.get('/myprofile', withAuth, async (req, res) => {
 
 
 module.exports = router;
-
-
-/*
-router for all categories 
-
-models:
-categoryModel
-*/
