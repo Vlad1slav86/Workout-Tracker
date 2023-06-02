@@ -10,6 +10,3 @@ router.use('/comments', commentRoutes);
 router.use('/comments', commentRoutes);
 
 module.exports = router;
-
-//does comment need a new api route?
-//

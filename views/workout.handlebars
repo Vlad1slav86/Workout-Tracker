@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="../public/css/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/workouts">Workouts</a></li>
+                <li><a href="/diet">Diet</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/login">Login/Sign Up</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Workout Tracker</h1>
+        <div class="workout-container">
+            <!-- Display workout details here -->
+            <h2>{{workoutName}}</h2>
+            <p>{{workoutDescription}}</p>
+            <p>Duration: {{workoutDuration}} minutes</p>
+            <p>Calories Burned: {{caloriesBurned}} kcal</p>
+        </div>
+        <div class="exercise-list">
+            <h2>Exercises</h2>
+            <ul>
+                {{#each exercises}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+
+    <script src=""></script>
+</body>
+</html>

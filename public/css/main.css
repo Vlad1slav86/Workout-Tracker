@@ -1,4 +1,84 @@
-/* REMOVE THIS AND ADD YOUR OWN CSS AS NEEDED */
-* {
-	outline: red dashed 2px;
-}
+/* Header */
+header {
+	background-color: rgb(20, 155, 218);
+	padding: 40px;
+  }
+  
+  /* Navigation */
+  nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+  }
+  
+  nav li {
+	margin-right: 10px;
+  }
+  
+  nav li:last-child {
+	margin-right: 0;
+  }
+  
+  nav a {
+	display: block;
+	padding: 8px 12px;
+	text-decoration: none;
+	color: #333;
+	border-radius: 5px;
+	font-size: 30px;
+  }
+  
+  nav a:hover {
+	background-color: #333;
+	color: #fff;
+  }
+  
+  /* Body */
+  body {
+	background-color: #fff;
+  }
+  
+  /* Login Page */
+  .login-form,
+  .signup-form {
+	margin-top: 40px;
+  }
+  
+  .login-form h2,
+  .signup-form h2 {
+	margin-top: 20px;
+  }
+  
+  .login-form label,
+  .signup-form label {
+	display: block;
+	margin-top: 10px;
+  }
+  
+  .login-form input,
+  .signup-form input {
+	width: 100%;
+	padding: 8px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+  }
+  
+  .login-form button,
+  .signup-form button {
+	margin-top: 20px;
+	background-color: rgb(20, 155, 218);
+	border: none;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+  }
+  
+  .login-form button:hover,
+  .signup-form button:hover {
+	background-color: #333;
+  }
+  
+  

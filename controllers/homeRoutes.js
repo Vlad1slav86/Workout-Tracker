@@ -1,7 +1,7 @@
 const { Post, User, Comment } = require('../models');
 
 const router = require('express').Router();
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attribute: ['name'],
+          attributes: ['name'],
         },
       ],
     });
@@ -22,40 +22,94 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in
     });
 
-    res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/post', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attribute: ['name']
+          attributes: ['name']
         },
         {
           model: Comment,
           include: [ User ],
-          attribute: ['name']
+          attributes: ['name']
         }
       ]
     });
-    res.status(200).json;
+
   } catch (error) {
-    
+    res.status(500).json(error.message)
   }
 });
 
-// router.get('/workout', async (req, res) => {
-//   try {
-    
-//   } catch (error) {
-    
-//   }
-// });
+router.get('/workout', async (req, res) => {
+  try {
+    const catData = await Post.findAll({
+      where: {
+        category_id: 1
+      }
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('workout', {
+      posts,
+      category_id: 1,
+      logged_in: req.session.logged_in
+    });
+
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
+
+router.get('/diet', async (req, res) => {
+  try {
+    const catData = await Post.findAll({
+      where: {
+        category_id: 2
+      }
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('diet', {
+      posts,
+      category_id: 2,
+      logged_in: req.session.logged_in
+    });
+
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
+
+router.get('/community', async (req, res) => {
+  try {
+    const catData = await Post.findAll({
+      where: {
+        category_id: 3
+      }
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('community', {
+      posts,
+      category_id: 3,
+      logged_in: req.session.logged_in
+    });
+
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
@@ -67,11 +121,3 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
-
-
-/*
-router for all categories 
-
-models:
-categoryModel
-*/
