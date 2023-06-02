@@ -1,7 +1,6 @@
 const { Post, User, Comment } = require('../models');
 
 const router = require('express').Router();
-// const { Post, User } = require('../models');
 
 const withAuth = require('../utils/auth');
 
@@ -24,9 +23,10 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in
     });
 
-    res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
+    res.status(200).json(postData);
+
   }
 });
 
@@ -85,13 +85,8 @@ router.get('/myprofile', withAuth, async (req, res) => {
   }
 });
 
-// router.get('/myprofile', (req, res) => {
-//   res.render('profile');
-// });
 
 
-
-  
 
 
 
