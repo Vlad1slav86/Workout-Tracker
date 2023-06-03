@@ -42,6 +42,13 @@
     <p>&copy; <span id="current-year"></span> ShapeShift. All rights reserved.</p>
   </div>
 
+<form action="/workouts" method="POST">
+  <input type="text" name="name" placeholder="Workout Name">
+  <input type="text" name="description" placeholder="Workout Description">
+  <button type="submit">Create Workout</button>
+</form>
+
+
   <script>
     var currentYear = new Date().getFullYear();
 
