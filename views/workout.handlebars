@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>{{pageTitle}}</title>
+    <title>Create Workout</title>
     <link rel="stylesheet" href="../public/css/main.css">
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="/workouts">Workouts</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/workout">Workouts</a></li>
                 <li><a href="/diet">Diet</a></li>
                 <li><a href="/community">Community</a></li>
                 <li><a href="/login">Login/Sign Up</a></li>
@@ -19,43 +21,29 @@
     </header>
 
     <main>
-        <h1>ShapeShifter</h1>
-        <div class="workout-container">
-            <!-- Display workout details here -->
-            <h2>{{workoutName}}</h2>
-            <p>{{workoutDescription}}</p>
-            <p>Duration: {{workoutDuration}} minutes</p>
-            <p>Calories Burned: {{caloriesBurned}} kcal</p>
-        </div>
-        <div class="exercise-list">
-            <h2>Exercises</h2>
-            <ul>
-                {{#each exercises}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        </div>
+        <h1>Create Workout</h1>
+
+        <form id="workout-form">
+            <label for="workout-name">Workout Name:</label>
+            <input type="text" id="workout-name" required>
+
+            <label for="workout-type">Workout Type:</label>
+            <input type="text" id="workout-type" required>
+
+            <div id="exercise-container">
+                <h2>Add Exercises</h2>
+            </div>
+
+            <button type="button" id="add-exercise">Add Exercise</button>
+            <button type="submit">Create Workout</button>
+        </form>
+
+        <div id="saved-workouts-section"></div>
     </main>
 
-     <footer>
-  <div class="footer-content">
-    <p>&copy; <span id="current-year"></span> ShapeShift. All rights reserved.</p>
-  </div>
+   
 
-<form action="/workouts" method="POST">
-  <input type="text" name="name" placeholder="Workout Name">
-  <input type="text" name="description" placeholder="Workout Description">
-  <button type="submit">Create Workout</button>
-</form>
-
-
-  <script>
-    var currentYear = new Date().getFullYear();
-
-    document.getElementById("current-year").textContent = currentYear;
-  </script>
-</footer>
-
-    <script src=""></script>
+    <script src="../public/js/workout.js"></script>
 </body>
+
 </html>
