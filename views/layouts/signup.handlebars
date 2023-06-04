@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{Shape Shift}}</title>
+    <link rel="stylesheet" href="../public/css/signup.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/workouts">Workouts</a></li>
+                <li><a href="/diet">Diet</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/login">Login/Sign Up</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+         <div id = "signupHeader">
+                   <div><a href = "./index.html">Shape Shift</a></div>
+                   <div><a href = "./login.html">LOG IN</a></div>
+         </div>
+
+         <div id = "signupBorder">
+                    <div></div>
+         </div>
+
+         <div id = "welcomeContainer">
+                   <div>Welcome! Just a few quick questions so we can customize Shape Shift Profile for you.</div>
+                    <div id = "continueBtn"><a>CONTINUE</a></div>
+         </div>
+
+         <div id = "weightGoalContainer">
+             <div>What is your weight goal?</div>
+             <div>
+             <div class = "lmgweight">Lose weight</div>
+             <div>Maintain Weight</div>
+             <div>Gain weight</div>
+             </div>
+         </div>
+
+         <div id = "baselineContainer">
+                 <div>
+                        <div>What is your baseline activity level?</div>
+                        <div>Not including workouts–we count that separately</div>
+                 </div>
+
+                 <div>
+                         <div class = "baselineActive">
+                                   <div>Not very Active</div>
+                                   <div>Spend most of the day sitting(e.g., bankteler , desk job)</div>
+                         </div>
+                         <div>
+                                   <div>Lightly Active</div>
+                                   <div>Spend a good part of the day on your feet(e.g., teacher , salesperson)</div>
+                         </div>
+                         <div>
+                                   <div>Active</div>
+                                   <div>Spend a good part of the day doing some physical activity(e.g., food server, poster carrier)</div>
+                         </div>
+                         <div>
+                                    <div>Very Active</div>
+                                    <div>Spend a good part of the day doing heavy physical activity(e.g., bike messenger , carpenter)</div>
+                         </div>
+                 </div>
+
+         </div>
+
+         <div id = "sexCalorieContainer">
+                <div>Please select which sex we should use to calculate your calorie needs.</div>
+                <select id="genderSelect">
+                       <option value="male">Male</option>
+                       <option value="female">Female</option>
+                </select>
+                <div>When were you born?</div>
+                 <input type="text" placeholder = "mm-dd-yyy" id = "birthDate"/>
+                 <div>Where do you live?</div>
+                 <div>
+                         <input type="text" placeholder = "Country"/>
+                         <input type="text" placeholder = "Zip Code"/>
+                 </div>
+                 <div>We use this information to calculate an accurate calorie goal for you.</div>
+
+         </div>
+
+         <div id = "tallAndWeightContainer">
+                     <div>How tall are you?</div>
+                     <input id = "inputHeight" placeholder = "Height In Centimeter"/>
+                     <div>How much do you weigh?</div>
+                     <div>It's OK to estimate. You can update this later.</div>
+                     <input id ="inputCurrentWeight" placeholder = "Current Weight in pounds"/>
+                     <div>What's your goal weight?</div>
+                     <div>Don't worry. This doesn't affect your daily calorie goal and you can always change it later.</div>
+                     <input id ="inputGoalWeight" placeholder = "Goal Weight in pounds"/>
+         </div>
+
+         <div id = "weeklyGoalContainer">
+                 <div>What is your weekly goal?</div>
+                 <div>Let's break down your overall health goal into a weekly one you can maintain. Slow-and-steady is best!</div>
+                 <div>
+                         <div>Lose 0.5 pounds per week</div>
+                         <div class = "perWeek">Lose 1 pound per week(Recommended)</div>
+                         <div>Lose 1.5 pounds per week</div>
+                         <div>Lose 2 pounds per week</div>
+                 </div>
+          </div>
+
+          <div id = "createContainer">
+                 <div>Almost there! Create your account</div>
+                 <input type = "email" id = "email" placeholder = "email address"/>
+                 <div id = "validEmail">Please enter a valid email address.</div>
+                 <input type = "password" id = "password" , placeholder = "Create a Password"/>
+                 <div>Must be at least 10 characters, no spaces.</div>
+                 <div id = "validPassword">Try again? Your password must have at least 10 characters, no spaces.</div>
+                 <div>CONTINUE</div>
+         </div>
+
+         <div id = "createUserContainer">
+                   <div>Create a username.</div>
+                   <input type="text" , id = "createUser" placeholder = "Create a username">
+                   <div>This username is already exist.</div>
+                   <div id = "finishBtn">FINISH</div>
+         </div>
+
+         <div id = "congratulationContainer">
+                 <div>Congratulations!</div>
+                 <div>Your daily net calorie goal is:</div>
+                 <div>2,990</div>
+                 <div>calories</div>
+                 <div>You have to maintain this goal daily.</div>
+                 <div id = "workout-tracker">EXPLORE MY WORKOUT TRACKER</div>
+         </div>
+
+         <div id = btnContainer>
+            <div id = "backBtn">BACK</div>
+            <div id = "nextBtn">NEXT</div>
+       </div>  
+</body>
+   <script src = "./signup.js"></script>
+</html>
