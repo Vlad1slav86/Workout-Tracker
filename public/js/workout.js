@@ -118,76 +118,76 @@
 
 
 
-//     const updatedWorkout = {
-//       name,
-//       description
-//     };
+// //     const updatedWorkout = {
+// //       name,
+// //       description
+// //     };
   
-//     try {
-//       const response = await fetch(`/workout/${workoutId}`, {
-//         method: 'PUT',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(updatedWorkout)
-//       });
+// //     try {
+// //       const response = await fetch(`/workout/${workoutId}`, {
+// //         method: 'PUT',
+// //         headers: {
+// //           'Content-Type': 'application/json'
+// //         },
+// //         body: JSON.stringify(updatedWorkout)
+// //       });
   
-//       if (response.ok) {
+// //       if (response.ok) {
        
-//       } else {
-//         console.error('Failed to update workout');
-//       }
-//     } catch (error) {
-//       console.error('An error occurred:', error);
-//     }
-//   }
+// //       } else {
+// //         console.error('Failed to update workout');
+// //       }
+// //     } catch (error) {
+// //       console.error('An error occurred:', error);
+// //     }
+// //   }
   
  
-//   async function handleWorkoutDeletion(workoutId) {
-//     try {
-//       const response = await fetch(`/workout/${workoutId}`, {
-//         method: 'DELETE'
-//       });
+// //   async function handleWorkoutDeletion(workoutId) {
+// //     try {
+// //       const response = await fetch(`/workout/${workoutId}`, {
+// //         method: 'DELETE'
+// //       });
   
-//       if (response.ok) {
+// //       if (response.ok) {
        
-//       } else {
-//         console.error('Failed to delete workout');
-//       }
-//     } catch (error) {
-//       console.error('An error occurred:', error);
-//     }
-//   }
+// //       } else {
+// //         console.error('Failed to delete workout');
+// //       }
+// //     } catch (error) {
+// //       console.error('An error occurred:', error);
+// //     }
+// //   }
   
   
-//   async function getWorkouts() {
-//     try {
-//       const response = await fetch('/workout');
-//       const workouts = await response.json();
+// //   async function getWorkouts() {
+// //     try {
+// //       const response = await fetch('/workout');
+// //       const workouts = await response.json();
   
       
-//     } catch (error) {
-//       console.error('An error occurred:', error);
-//     }
-//   }
+// //     } catch (error) {
+// //       console.error('An error occurred:', error);
+// //     }
+// //   }
   
   
-//   const workoutForm = document.querySelector('.workout-form');
-//   workoutForm.addEventListener('submit', handleWorkoutFormSubmit);
+// //   const workoutForm = document.querySelector('.workout-form');
+// //   workoutForm.addEventListener('submit', handleWorkoutFormSubmit);
   
-//   const workoutUpdateForm = document.querySelector('.workout-update-form');
-//   workoutUpdateForm.addEventListener('submit', handleWorkoutUpdateFormSubmit);
+// //   const workoutUpdateForm = document.querySelector('.workout-update-form');
+// //   workoutUpdateForm.addEventListener('submit', handleWorkoutUpdateFormSubmit);
   
-//   const deleteButtons = document.querySelectorAll('.delete-workout');
-//   deleteButtons.forEach((button) => {
-//     button.addEventListener('click', () => {
-//       const workoutId = button.dataset.workoutId;
-//       handleWorkoutDeletion(workoutId);
-//     });
-//   });
+// //   const deleteButtons = document.querySelectorAll('.delete-workout');
+// //   deleteButtons.forEach((button) => {
+// //     button.addEventListener('click', () => {
+// //       const workoutId = button.dataset.workoutId;
+// //       handleWorkoutDeletion(workoutId);
+// //     });
+// //   });
   
   
-//   getWorkouts();
+// //   getWorkouts();
   
 
 
@@ -430,5 +430,48 @@ document.addEventListener('DOMContentLoaded', () => {
   
       exercises = [];
     });
+
+    // Get a reference to the save workout button
+const saveWorkoutBtn = document.getElementById('save-workout-btn');
+
+// Function to save the workout data to local storage
+const saveWorkoutToLocalStorage = () => {
+  // Get the workout data from the form (modify this part according to your form structure)
+  const workoutData = {
+    name: document.getElementById('workout-name').value,
+    exercises: [] // Add the logic to collect exercise data here
+  };
+
+  // Get the existing workout data from local storage
+  let savedWorkouts = JSON.parse(localStorage.getItem('workouts')) || [];
+
+  // Add the new workout data to the existing workouts array
+  savedWorkouts.push(workoutData);
+
+  // Save the updated workouts array back to local storage
+  localStorage.setItem('workouts', JSON.stringify(savedWorkouts));
+
+  // Display a success message or perform any other actions
+  console.log('Workout saved successfully!');
+};
+
+// Add an event listener to the save workout button
+saveWorkoutBtn.addEventListener('click', saveWorkoutToLocalStorage);
+
+// Function to load and display the saved workouts from local storage
+const loadWorkoutsFromLocalStorage = () => {
+  // Get the saved workouts from local storage
+  const savedWorkouts = JSON.parse(localStorage.getItem('workouts')) || [];
+
+  // Loop through the saved workouts and display them (modify this part according to your display requirements)
+  savedWorkouts.forEach((workout) => {
+    console.log(workout.name); // Display the workout name
+    console.log(workout.exercises); // Display the workout exercises
+  });
+};
+
+// Call the function to load and display the saved workouts when the page is loaded
+window.addEventListener('load', loadWorkoutsFromLocalStorage);
+
   });
   
