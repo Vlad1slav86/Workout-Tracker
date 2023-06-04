@@ -17,7 +17,6 @@ router.get('/', async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('homepage', {
       posts,
@@ -94,7 +93,7 @@ router.get('/diet', async (req, res) => {
   } catch (error) {
     res.status(500).json(error.message);
   }
-})
+});
 
 router.get('/community', async (req, res) => {
   try {
