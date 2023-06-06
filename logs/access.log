@@ -96,3 +96,8 @@ GET /public/css/main.css 404 158 - 0.551 ms
 GET /community 200 1941 - 2.249 ms
 GET /public/css/main.css 404 158 - 0.508 ms
 GET /public/css/main.css 404 158 - 0.284 ms
+GET /community 304 - - 3.653 ms
+GET /public/css/main.css 404 158 - 0.532 ms
+GET /workouts 404 147 - 0.232 ms
+GET /community 304 - - 1.745 ms
+GET /public/css/main.css 404 158 - 0.484 ms
