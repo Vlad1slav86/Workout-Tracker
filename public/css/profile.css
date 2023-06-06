@@ -187,7 +187,7 @@
 }
 
 .card__name {
-  margin-top: 15px;
+  margin-top: -35px;
   font-size: 1.5em;
 }
 
@@ -295,4 +295,10 @@
   transition: color 0.25s 0.0833333333s;
   position: relative;
   border: none;
+}
+
+#actual-btn{
+  margin-top: 68px;
+  margin-left: -1px;
+  width: 88px;
 }

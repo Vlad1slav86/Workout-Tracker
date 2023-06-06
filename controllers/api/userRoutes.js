@@ -76,4 +76,18 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const newPic = await User.update(
+      req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      });
+    res.status(200).json(newPic);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
 module.exports = router;

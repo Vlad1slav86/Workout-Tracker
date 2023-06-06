@@ -47,13 +47,6 @@ User.hasMany(Picture, {
   foreignKey: 'user_id'
 });
 
-Post.hasOne(Picture, {
-  foreignKey: 'post_id'
-});
-
-Picture.belongsTo(Post, {
-  foreignKey: 'post_id'
-});
 
 module.exports = { User, Post, Comment, Category, Picture };
 

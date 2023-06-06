@@ -1,5 +1,6 @@
 const router = require('express').Router();
-
+const { Picture } = require('../../models');
+const fs = require('fs')
 router.post('/', async (req, res) => {
   // function base64_encode(file) {
   //     // read binary data
@@ -16,7 +17,7 @@ router.post('/', async (req, res) => {
     const picData = await Picture.create({
       mime: mimetype,
       picture: pic,
-      post_id: parseInt(req.body.id)
+      user_id: parseInt(req.body.id)
     });
 
     res.status(200).json(picData);

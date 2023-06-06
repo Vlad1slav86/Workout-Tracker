@@ -1,4 +1,4 @@
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Picture } = require('../models');
 
 const router = require('express').Router();
 
@@ -130,6 +130,7 @@ router.get('/myprofile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
+      include: [Picture]
     });
 
     const user = userData.get({ plain: true });
