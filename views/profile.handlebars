@@ -32,7 +32,8 @@
 <form class="profileform">
 <div class="container">
   <div class="card">
-    <div class="card card__image"><input type="file" id="actual-btn"></div>
+    <div class="card card__image"><input class="form-control userimages" type="file" multiple/>
+</div>
     <p class="card__name">{{ name }}</p>
     <input type="hidden" class="img" value="{{ id }}">
     <div class="grid-container">
@@ -52,10 +53,8 @@
 </form>
 
  <div class="form-group row">
-        <label for="formFile" class="col-sm-6 col-form-label">Upload Image</label>
+        <label for="formFile" class="col-sm-6 col-form-label"></label>
         <div class="col-sm-10">
-
-          <input class="form-control userimages" type="file" multiple/>
      
         </div>
 
