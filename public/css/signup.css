@@ -1,0 +1,451 @@
+body {
+    padding : 0;
+    margin : 0;
+    background-image: url("https://www.myfitnesspal.com/_next/image?url=%2Fpages%2Fsignup%2Fbg.png&w=1920&q=75");
+     background-color: #F0F2F4;
+}
+#signupHeader{
+    display : flex;
+    justify-content : space-between;
+    padding : 0 10%;
+    height : 60px;
+    align-items : center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width : 80%;
+    font-family: "Neue Plak UA", Helvetica, Arial, -apple-system, sans-serif;
+    position : fixed;
+    top : 0;
+    background : rgb(255, 115, 0);
+    z-index : 20;
+
+}
+
+#signupHeader>div>a{
+    text-decoration : none;
+    color : black;
+    
+}
+#signupHeader>div:nth-child(1)>a{
+    font-size : 30px;
+    color : #000000;
+    font-weight: 600;
+
+}
+
+#signupBorder{
+    width : 38%;
+    background-color: #DEE1E7;
+    height : 8px;
+    position : absolute;
+    left : 31%;
+    border-radius: 10px 10px 0px 0px;
+    display : none;
+    top : 120px;
+}
+
+#signupBorder>div{
+    width : 14.2899%;
+   background-color :#0066EE;
+   transition : all  ease-in-out 0.6s;
+   position : absolute;
+   height : 8px;
+   border-radius: 10px 0px 0px 0px;
+}
+#welcomeContainer{
+    width : 38%;
+    height : 500px;
+    margin : auto;
+    margin-top : 120px;
+    padding-top : 250px;
+    font-family: "Neue Plak UA", Helvetica, Arial, -apple-system, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius : 5px;
+    background : rgb(255, 255, 255);
+}
+
+#welcomeContainer>div:nth-child(1){
+      width : 80%;
+      margin:auto;
+      font-size : 23px;
+      font-weight : 800;
+      text-align : center;
+      margin-bottom : 40px;
+
+}
+
+#welcomeContainer>div:nth-child(2){
+    background-color: #ff7300;
+    width : 75%;
+    margin : auto;
+    text-align : center;
+    padding :15px 0px;
+    font-weight : 700;
+    border-radius : 5px;
+}
+
+#welcomeContainer>div:nth-child(2):hover{
+    cursor : pointer;
+    background-color : #ff7300;
+}
+
+
+#welcomeContainer>div:nth-child(2)>a{
+    text-decoration: none;
+    color : white;
+
+}
+
+#weightGoalContainer , #baselineContainer ,#sexCalorieContainer ,#tallAndWeightContainer ,#weeklyGoalContainer , #createContainer , #createUserContainer , #congratulationContainer{
+    font-family: "Neue Plak UA", Helvetica, Arial, -apple-system, sans-serif;
+   display : none;
+   position : absolute;
+   background : white;
+   left : 31%;
+   top : 130px;
+   width : 38%;
+   text-align : center;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   padding : 40px 0;
+   border-radius : 5px;
+   
+}
+
+#weightGoalContainer>div:nth-child(1){
+    font-weight : 800;
+    margin-bottom : 40px;
+}
+
+
+#weightGoalContainer>div:nth-child(2)>div , #baselineContainer>div:nth-child(2)>div{
+    border : 2px solid #eee;
+    width : 75%;
+    margin : auto;
+    padding : 20px 0;
+    margin-bottom : 6px;
+    cursor : pointer;
+    border-radius : 5px;
+}
+
+#weightGoalContainer>div:nth-child(2)>div:hover ,#baselineContainer>div:nth-child(2)>div:hover{
+    border : 2px solid  grey;
+}
+
+
+#weightGoalContainer>div:nth-child(2)>.lmgweight{
+    border: 2px solid #000000;
+    color : #ff7300;
+}
+
+#weightGoalContainer>div:nth-child(2)>.lmgweight:hover{
+    border: 2px solid #ff7300;
+}
+
+#baselineContainer>div:nth-child(1){
+    margin-bottom : 60px;
+}
+
+#baselineContainer>div:nth-child(1)>div:nth-child(1){ 
+    font-size : 20px;
+    font-weight : bold;
+    margin-bottom : 10px;
+}
+
+#baselineContainer>div:nth-child(1)>div:nth-child(2){
+    font-size : 14px;
+}
+
+#baselineContainer>div:nth-child(2)>div{
+    text-align : left;
+    font-size : 18px;
+    color : black;
+    padding-left : 8px;
+    padding-bottom : 20px;
+}
+
+#baselineContainer>div:nth-child(2)>div>div:nth-child(2){
+    font-size : 16px;
+    color : rgb(109, 113, 122);
+}
+
+#baselineContainer>div:nth-child(2)>div.baselineActive{
+    border: 2px solid #000000;
+    color : #ff7300;
+}
+#baselineContainer>div:nth-child(2)>div.baselineActive>div:nth-child(2){
+    color : black;
+}
+
+#baselineContainer>div:nth-child(2)>div.baselineActive:hover{
+    border: 2px solid #ffffff;
+}
+
+#baselineContainer , #sexCalorieContainer , #tallAndWeightContainer , #weeklyGoalContainer{
+    padding-bottom : 200px;
+}
+
+#btnContainer{
+    display : none;
+    width : 38%;
+    margin : auto;
+    justify-content : space-between;
+    position:fixed;
+    left : 31%;
+    z-index : 20;
+    bottom : 50px;
+
+}
+    
+#btnContainer>div{
+   display : inline-block;
+     text-align : center;
+     width : 33%;
+     border: 2px solid #030100;
+     border-radius : 5px;
+     padding : 10px 0px;
+     font-weight : 800;
+     color : #ff7300;
+     cursor : pointer;
+     margin-left : 10%;
+}
+
+#btnContainer>div#nextBtn{
+     background-color: #ff7300;
+     color : white;
+     margin-left : 10%;
+}
+
+#sexCalorieContainer>div:nth-child(1) ,#sexCalorieContainer>div:nth-child(3) ,#sexCalorieContainer>div:nth-child(5) ,#congratulationContainer>div:nth-child(1){
+    width : 68%;
+    margin : auto;
+    font-size : 18px;
+    font-weight : bold;
+    text-align : left;
+    margin-bottom : 20px;
+}
+
+#sexCalorieContainer>select:nth-child(2) , #sexCalorieContainer>input:nth-child(4){
+    width : 68%;
+    margin : auto;
+    height : 60px;
+    font-size : 18px;
+    border : 2px solid #eee;
+    border-radius : 5px;
+    cursor : pointer;
+    outline-color : #000000;
+}
+
+#sexCalorieContainer>div:nth-child(3),#sexCalorieContainer>div:nth-child(5){ 
+    margin-top : 40px;
+}
+#sexCalorieContainer>div:nth-child(6){
+    display : flex;
+    width : 68%;
+    margin : auto;
+    justify-content : space-between;
+    margin-bottom : 40px;
+
+}
+
+#sexCalorieContainer>div:nth-child(6)>input{
+    font-size : 16px;
+    width : 45%;
+    height : 50px;
+    border-radius : 5px;
+    border : 2px solid #eee;
+    outline-color : #000000;
+}
+
+#sexCalorieContainer>div:nth-child(7){
+    width : 60%;
+    margin : auto;
+    margin-top : 60px;
+    font-size : 14px;
+}
+
+
+#tallAndWeightContainer>*,#weeklyGoalContainer>*{
+    width : 68%;
+    margin : auto;
+    text-align : left;
+    margin-bottom : 20px;
+}
+
+#tallAndWeightContainer>div:nth-child(1) , #tallAndWeightContainer>div:nth-child(3), #tallAndWeightContainer>div:nth-child(6), #createContainer>div:nth-child(1) , #createUserContainer >div:nth-child(1){
+    font-size : 18px;
+    font-weight : bold;
+    margin-bottom : 20px;
+    
+}
+
+#tallAndWeightContainer>input{
+    font-size : 18px;
+    height : 40px; 
+    margin-bottom : 40px;
+}
+
+#tallAndWeightContainer>div:nth-child(4) , #tallAndWeightContainer>div:nth-child(7){
+       font-size : 13px;
+}
+
+#weeklyGoalContainer>div:nth-child(1){
+    font-size : 18px;
+    font-weight : bold;
+    margin-bottom : 10px;
+}
+
+#weeklyGoalContainer>div:nth-child(2){
+    font-size : 13px;
+    margin-bottom : 20px;
+    color : rgb(109, 113, 122);
+    text-align : center;
+}
+#weeklyGoalContainer>div:nth-child(3)>div{
+    cursor : pointer;
+    border :  2px solid #eee;
+    padding : 20px 0px;
+    margin-bottom : 10px;
+    border-radius : 5px;
+}
+
+#weeklyGoalContainer>div:nth-child(3)>div:hover{
+    border : 2px solid  grey;
+}
+#weeklyGoalContainer>div:nth-child(3)>div.perWeek{
+    border: 2px solid #000000;
+    color : #ff7300;
+}
+
+#weeklyGoalContainer>div:nth-child(2)>div.perWeek:hover{
+    border: 2px solid #0066EE;
+}
+
+#createContainer>div#validEmail ,#createContainer>div#validPassword{
+      display : none;
+      color : red;
+      font-size : 14px;
+      width : 75%;
+      margin : auto;
+      margin-top : 5px;
+      margin-bottom : 15px;
+      text-align : left;
+}
+
+#createContainer>input , #createUserContainer >input{
+    height : 50px;
+    font-size : 16px;
+    border-radius : 5px;
+    outline-color : #ff7300;
+    cursor : pointer;
+    border : 2px solid #eee;
+    padding-left : 5px;
+    width : 75%;
+    margin : auto;
+    display : block;
+    margin-bottom : 10px;
+}
+
+#createContainer>input:hover , #createUserContainer >input:hover{
+    border : 2px solid  grey;
+}
+
+#createContainer>div:nth-child(5){
+    width : 75%;
+    margin : auto;
+    font-size : 14px;
+    color : rgb(109, 113, 122);
+    text-align : left;
+}
+
+#createContainer>div:nth-child(7){
+    width : 75%;
+    margin : auto;
+    text-align : center;
+    font-size : 16px;
+    font-weight : bold;
+    background-color : #ff7300;
+    padding : 15px 0px;
+    border-radius : 5px;
+    cursor : pointer;
+    margin-top : 80px;
+    color : white;
+}
+
+#createUserContainer >div:nth-child(3){
+     width : 75%;
+     margin : auto;
+     color : red ;
+     font-size : 13px;
+     display : none;
+}
+
+#createUserContainer >div:nth-child(4){
+    width : 40%;
+    margin : auto;
+    text-align : center;
+    font-size : 16px;
+    font-weight : bold;
+    margin-top : 60px;
+    padding : 15px 0px;
+    background-color : #ff7300;
+    color : white;
+    border-radius : 5px;
+    cursor : pointer;
+
+}
+
+#congratulationContainer>div{
+    width : 100%;
+    margin : auto;
+    text-align : center;
+}
+
+#congratulationContainer>div:nth-child(1){
+    font-size : 30px;
+    margin-bottom : 40px;
+    text-align : center;
+    color : #ff7300;
+}
+
+#congratulationContainer>div:nth-child(2){
+    margin-top : 40px;
+    font-size : 15px;
+    font-weight : 600;
+}
+
+#congratulationContainer>div:nth-child(3){
+    margin-top : 30px;
+    font-size : 40px;
+    margin-bottom : 20px;
+    font-weight : bold;
+}
+
+#congratulationContainer>div:nth-child(4){
+    width : 30%;
+    color : #ff7300; 
+    cursor : pointer;
+    font-size : 15px;
+    background : #DEE1E7;
+    padding : 15px 0px;
+    margin-bottom : 40px;
+    border-radius : 5px;
+
+}
+
+#congratulationContainer>div:nth-child(5){
+      font-size : 20px;
+      font-weight : bold;
+      margin-bottom : 60px;
+}
+
+#congratulationContainer>div:nth-child(6){
+      width : 70%;
+      margin : auto;
+      background : #ff7300;
+      padding : 15px 0px;
+      color : white;
+      font-size : 18px;
+      font-weight : 800px;
+      border-radius : 5px;
+      margin-bottom : 40px;
+      cursor : pointer;
+}

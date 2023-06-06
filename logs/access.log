@@ -85,3 +85,14 @@ GET /community 304 - - 1.791 ms
 GET /public/css/main.css 404 158 - 0.277 ms
 GET /login 304 - - 1.092 ms
 GET /profile 404 146 - 0.224 ms
+GET /community 304 - - 1.766 ms
+GET /public/css/main.css 404 158 - 0.421 ms
+GET /community 304 - - 2.189 ms
+GET /public/css/main.css 404 158 - 0.493 ms
+GET /community 200 1935 - 2.116 ms
+GET /public/css/main.css 404 158 - 0.264 ms
+GET /community 200 2644 - 1.544 ms
+GET /public/css/main.css 404 158 - 0.551 ms
+GET /community 200 1941 - 2.249 ms
+GET /public/css/main.css 404 158 - 0.508 ms
+GET /public/css/main.css 404 158 - 0.284 ms
