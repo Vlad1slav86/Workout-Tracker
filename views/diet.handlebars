@@ -2,43 +2,56 @@
 <html>
 
 <head>
+
     <meta charset="utf-8">
     <title>{{pageTitle}}</title>
     <link rel="stylesheet" href="/css/main.css">
+
 </head>
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/workouts">Workouts</a></li>
-                <li><a href="/diet">Diet</a></li>
-                <li><a href="/community">Community</a></li>
-                <li><a href="/login">Login/Sign Up</a></li>
-                <li><a href="/profile">Profile</a></li>
-            </ul>
-        </nav>
+      
     </header>
 
     <main>
-        <h1>Diet Tracker</h1>
-        <div class="meal-container">
-            <!-- Display meal details here -->
-            <h2>{{mealName}}</h2>
-            <p>{{mealDescription}}</p>
+         <nav>
             <ul>
-                {{#each mealItems}}
-                <li>{{this}}</li>
-                {{/each}}
+                <li><a href="/"><strong>HOME</strong></a></li>
+                <li><a href="/workout"><strong>WORKOUTS</strong></a></li>
+                <li><a href="/diet"><strong>DIET</strong></a></li>
+                <li><a href="/community"><strong>COMMUNITY</strong></a></li>
+                <li><a href="/login"><strong>LOGIN</strong></a></li>
+                <li><a href="/profile"><strong>PROFILE</strong></a></li>
             </ul>
+        </nav>
+        <h1>Create Meal Plan</h1>
+
+        <form id="meal-form">
+            <label for="meal-name">Meal Name:</label>
+            <input type="text" id="meal-name" required>
+
+            <label for="meal-calories">Calories:</label>
+            <input type="number" id="meal-calories" required>
+
+            <button type="submit">Add Meal</button>
+        </form>
+
+        <button id="create-meal-plan">Create Meal Plan</button>
+
+        <div id="meal-plan"></div>
+
+        <div id="total-calories"></div>
+
+        <div id="saved-meal-plans">
+            <h2>Saved Meal Plans</h2>
+            <ul></ul>
         </div>
-        <div class="meal-list">
-            <h2>Meals</h2>
-            <ul>
-                {{#each meals}}
-                <li><a href="/diet/{{this.id}}">{{this.name}}</a></li>
-                {{/each}}
-            </ul>
+
+        <div>
+            <label for="meal-plan-name">Meal Plan Name:</label>
+            <input type="text" id="meal-plan-name">
+            <button id="save-meal-plan">Save Meal Plan</button>
         </div>
         <div class="content">
             <div class="input ">
@@ -62,6 +75,7 @@
         </div>
     </main>
 
+
     <footer>
         <!-- Footer content here -->
     </footer>
@@ -70,3 +84,4 @@
 </body>
 
 </html>
+

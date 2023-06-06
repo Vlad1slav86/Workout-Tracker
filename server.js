@@ -18,7 +18,7 @@ const hbs = exphbs.create({ helpers });
 const accessLogStream = fs.createWriteStream(path.join(__dirname, './logs/access.log'), { flags: 'a' });
 
 const sess = {
-  secret: 'Super secret secret', // CHANGE THIS
+  secret: process.env.SECRET, // CHANGE THIS
   cookie: {
     maxAge: 1 * 60 * 60 * 1000, // UPDATE THIS AS DESIRED, currently set to expire in 1 hour
     httpOnly: true,
@@ -31,6 +31,7 @@ const sess = {
     db: sequelize
   })
 };
+
 
 app.use(session(sess));
 

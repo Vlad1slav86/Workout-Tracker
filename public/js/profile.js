@@ -1,3 +1,4 @@
+
 const { response } = require('express');
 
 const newFormHandler = async (event) => {
@@ -40,3 +41,4 @@ const delButtonHandler = async (event) => {
 
 document.querySelector('.delete').addEventListener('click', delButtonHandler);
 document.querySelector('.post').addEventListener('click', newFormHandler);
+

@@ -4,14 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHANGE THIS</title>
+
+  <title>ShapeShift</title>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/profile.css">
 
 </head>
+
+
 
 <body>
   {{{body}}}
 </body>
+
+  <footer>
+  <div class="footer-content">
+    <p>&copy; <span id="current-year"></span> <strong>ShapeShift. All rights reserved.</strong></p>
+  </div>
+
+  <script>
+    var currentYear = new Date().getFullYear();
+
+    document.getElementById("current-year").textContent = currentYear;
+  </script>
+</footer>
 
 </html>
