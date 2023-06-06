@@ -25,7 +25,7 @@ const newFormHandler = async (event) => {
           body: formData,
         }).then(() => {
           console.log('photo uploaded');
-          // document.location.reload();
+          document.location.reload();
         });
       }
     }
@@ -47,26 +47,4 @@ const h3 = document.querySelector('.usrdata');
 const rememberMe = document.querySelector('.rememberme');
 
 inputBtn.addEventListener('click', newFormHandler);
-// form.addEventListener('submit', function (event){
-//   event.preventDefault();
-// });
 
-// inputBtn.addEventListener('click', function(){
-//   let items = document.getElementsByClassName('usr');
-//   for (let i = 0; i < items.length; i++) {
-//     localStorage.setItem(items[i].name, items[i].value);
-//     console.log(items[i].name);
-//     console.log(items[i].value);
-//     DisplayCheck();
-//   }
-// });
-
-// function DisplayCheck(){
-//   if (localStorage.getItem('number')) {
-//     let names = localStorage.getItem('number');
-//     h3.textContent = `${names}`;
-//     input.style.display = 'none';
-//     inputBtn.style.display = 'none';
-//   }
-// }
-// document.body.onload = DisplayCheck;

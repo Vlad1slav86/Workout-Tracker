@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Picture } = require('../../models');
-const fs = require('fs')
+const fs = require('fs');
 router.post('/', async (req, res) => {
   // function base64_encode(file) {
   //     // read binary data

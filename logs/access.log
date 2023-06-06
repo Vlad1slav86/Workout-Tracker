@@ -129,3 +129,6 @@ POST /api/picture 500 2 - 10.638 ms
 GET /myprofile 304 - - 23.957 ms
 POST /api/picture 200 38144 - 26.593 ms
 GET /myprofile 200 40445 - 24.417 ms
+GET /myprofile 304 - - 13.737 ms
+POST /api/picture 200 35704 - 40.072 ms
+GET /myprofile 200 76168 - 9.348 ms
