@@ -1,0 +1,68 @@
+
+
+<body class="profilebck">
+    <nav>
+      <div class="navbar">
+        <div class="container nav-container">
+          
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>  
+            
+          <div class="logo">
+            <h1>Workout-Tracker</h1>
+          </div>
+          <div class="menu-items">
+            <li><a href="/">Home</a></li>
+            <li><a href="/workouts">Workouts</a></li>
+            <li><a href="/diet">Diet</a></li>
+            <li><a href="/Community">Community</a></li>
+            <li><button id="logout">Logout</button></li>
+            <li><button id="dlt" class="deletebtn" data-id="{{ id }}">Delete</button></li>
+            
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </body>
+<form class="profileform">
+<div class="container">
+  <div class="card">
+    <div class="card card__image"><input type="file" id="actual-btn"></div>
+    <p class="card__name">{{ name }}</p>
+    <input type="hidden" class="img" value="{{ id }}">
+    <div class="grid-container">
+
+      <div class="grid-child-posts">
+        About me
+      </div>
+    </div>
+      <input name="number" class="usr"><button class="usrbtn">submit</button></input>
+      <h3 class="usrdata"></h3>
+    <button class="btn draw-border">Follow</button>
+    <button class="btn draw-border">Message</button>
+    <button class="btn draw-border pstbtn">Post</button>
+
+  </div>
+</div>
+</form>
+
+ <div class="form-group row">
+        <label for="formFile" class="col-sm-6 col-form-label">Upload Image</label>
+        <div class="col-sm-10">
+
+          <input class="form-control userimages" type="file" multiple/>
+     
+        </div>
+
+          {{#each pictures as |picture|}}
+          <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100" />
+          {{/each}}
+
+        <script src="/js/logout.js"></script>
+        <script src="/js/delete-profile.js"></script>
+        <script src="/js/myprofile.js"></script>

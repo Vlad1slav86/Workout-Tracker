@@ -1,26 +1,25 @@
 /* Header */
 header {
-	background-color: rgb(20, 155, 218);
+	background-color: rgba(255, 115, 0, 0.87);
 	padding: 40px;
   }
   
-  /* Navigation */
-  nav ul {
+ .navigation {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	display: flex;
   }
   
-  nav li {
+  .navigation li {
 	margin-right: 10px;
   }
   
-  nav li:last-child {
+  .navigation li:last-child {
 	margin-right: 0;
   }
   
-  nav a {
+  .navigation a {
 	display: block;
 	padding: 8px 12px;
 	text-decoration: none;
@@ -29,7 +28,7 @@ header {
 	font-size: 30px;
   }
   
-  nav a:hover {
+  .navigation a:hover {
 	background-color: #333;
 	color: #fff;
   }
