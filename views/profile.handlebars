@@ -4,12 +4,14 @@
     <nav>
       <div class="navbar">
         <div class="container nav-container">
+          
             <input class="checkbox" type="checkbox" name="" id="" />
             <div class="hamburger-lines">
               <span class="line line1"></span>
               <span class="line line2"></span>
               <span class="line line3"></span>
             </div>  
+            
           <div class="logo">
             <h1>Workout-Tracker</h1>
           </div>
@@ -19,16 +21,37 @@
             <li><a href="/diet">Diet</a></li>
             <li><a href="/Community">Community</a></li>
             <li><button id="logout">Logout</button></li>
-            <li><button id="dlt" class="deletebtn" data-id="{{ user.id }}">Delete</button></li>
+            <li><button id="dlt" class="deletebtn" data-id="{{ id }}">Delete</button></li>
+            
           </div>
+
         </div>
       </div>
     </nav>
   </body>
+<form class="profileform">
+<div class="container">
+  <div class="card">
+    <img src="https://lh3.googleusercontent.com/pZwZJ5HIL5iKbA91UGMUIPR0VJWa3K0vOGzDZmY6wU3EJBUdfsby3VEyxU162XxTyOyP3D154tjkr-4Jgcx8lygYUR8eB-jVmld4dsHi1c-mE_A8jKccseAG7bdEwVrcuuk6ciNtSw=s170-no" alt="Person" class="card__image">
+    <p class="card__name">{{ name }}</p>
+    <div class="grid-container">
+
+      <div class="grid-child-posts">
+        About me
+      </div>
+    </div>
+      <input name="number" class="usr"><button class="usrbtn">submit</button></input>
+      <h3 class="usrdata"></h3>
+    <button class="btn draw-border">Follow</button>
+    <button class="btn draw-border">Message</button>
+    <button class="btn draw-border">Post</button>
+
+  </div>
+</div>
+</form>
 
 
-
-
+{{!-- 
 <div class="card">
     <div class="card_background_img">
     </div>
@@ -67,7 +90,7 @@
         <h3 class="usrdata4"></h3>
     </div>
 </div>
-</form>
+</form> --}}
 
 
 
