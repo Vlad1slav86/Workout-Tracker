@@ -2,8 +2,11 @@
 <html>
 
 <head>
-    <title>Diet</title>
-    <link rel="stylesheet" href="../public/css/main.css">
+
+    <meta charset="utf-8">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="/css/main.css">
+
 </head>
 
 <body>
@@ -50,9 +53,34 @@
             <input type="text" id="meal-plan-name">
             <button id="save-meal-plan">Save Meal Plan</button>
         </div>
+        <div class="content">
+            <div class="input ">
+                <form class="fourm">
+                    <label for="calories">type your meal calories:</label>
+                    <input type="number" id="calories" name="calories">
+                    <label for="mincalories">type your meal calories:</label>
+                    <input type="number" id="mincalories" name="mincalories">
+                </form>
+                <br>
+                <button id="submit" type="button">submit</button>
+
+            </div>
+        </div>
+        <div class="result">
+
+        </div>
+
+        <div class='Recipe'>
+
+        </div>
     </main>
 
-    <script src="../public/js/diet.js"></script>
+
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+
+    <script src="/js/diet.js"></script>
 </body>
 
 </html>

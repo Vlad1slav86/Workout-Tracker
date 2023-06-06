@@ -35,6 +35,10 @@ User.init(
         len: [8],
       },
     },
+    about: {
+      type: DataTypes.TEXT,
+      
+    }
   },
   {
     hooks: {

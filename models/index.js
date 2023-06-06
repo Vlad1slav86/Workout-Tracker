@@ -3,6 +3,7 @@ const User = require('./User');
 const Comment = require('./Comment');
 const Category = require('./Categories');
 const Picture = require('./Picture');
+const diet = require ('./diet');
 
 User.hasMany(Post, {
   foreignKey: 'user_id'
@@ -39,20 +40,12 @@ Post.belongsTo(Category, {
 });
 
 Picture.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 User.hasMany(Picture, {
-    foreignKey: 'user_id'
+  foreignKey: 'user_id'
 });
 
-Post.hasOne(Picture, {
-    foreignKey: 'post_id'
-});
 
-Picture.belongsTo(Post, {
-    foreignKey: 'post_id'
-});
-
-module.exports = { User, Post, Comment, Category, Picture };
