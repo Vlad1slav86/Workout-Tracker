@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
@@ -58,4 +58,18 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const newPic = await User.update(
+      req.body,
+      {
+      where: {
+        id: req.params.id
+      }
+    });
+    res.status(200).json(newPic);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
 module.exports = router;
