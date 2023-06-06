@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Workout</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/workout.css">
+
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="/"><strong>HOME</strong></a></li>
+                <li><a href="/workout"><strong>WORKOUTS</strong></a></li>
+                <li><a href="/diet"><strong>DIET</strong></a></li>
+                <li><a href="/community"><strong>COMMUNITY</strong></a></li>
+                <li><a href="/login"><strong>LOGIN</strong></a></li>
+                <li><a href="/profile"><strong>PROFILE</strong></a></li>
+            </ul>
+        </nav>
+        <h1>Generate Workout</h1>
+
+        <form id="workout-form">
+            <label for="time">Time (minutes):</label>
+            <input type="number" id="time" required>
+
+            <label for="equipment">Equipment:</label>
+            <input type="text" id="equipment" required>
+
+            <label for="muscle">Muscle:</label>
+            <input type="text" id="muscle" required>
+
+            <label for="fitness-level">Fitness Level:</label>
+            <input type="text" id="fitness-level" required>
+
+            <label for="fitness-goals">Fitness Goals:</label>
+            <input type="text" id="fitness-goals" required>
+
+            <button type="submit">Generate Workout</button>
+        </form>
+
+        <div id="workout-results"></div>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/workout.js"></script>
+</body>
+
+</html>
