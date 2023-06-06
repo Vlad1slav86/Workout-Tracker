@@ -1,54 +1,140 @@
-// diet.js
+// Get references to the required elements in the DOM
+const createMealPlanBtn = document.getElementById('create-meal-plan');
+const mealForm = document.getElementById('meal-form');
+const saveMealPlanBtn = document.getElementById('save-meal-plan');
+const mealPlanContainer = document.getElementById('meal-plan');
+const totalCaloriesContainer = document.getElementById('total-calories');
+const mealPlanNameInput = document.getElementById('meal-plan-name');
+const savedMealPlansContainer = document.getElementById('saved-meal-plans');
 
-// Get the form and buttons elements
-const mealForm = document.querySelector('#meal-form');
-const createMealPlanButton = document.querySelector('#create-meal-plan');
-
-// Get the meal plan and total calories elements
-const mealPlanContainer = document.querySelector('#meal-plan');
-const totalCaloriesContainer = document.querySelector('#total-calories');
-
-// Initialize an empty array to store the meals
+// Initialize the meal plan array and saved meal plans array
 let mealPlan = [];
+let savedMealPlans = [];
 
-// Event listener for adding a meal
-mealForm.addEventListener('submit', (event) => {
-  event.preventDefault();
+// Function to handle the form submission
+function handleFormSubmit(event) {
+    event.preventDefault();
 
-  // Get the meal name and calories
-  const mealNameInput = document.querySelector('#meal-name');
-  const mealCaloriesInput = document.querySelector('#meal-calories');
-  const mealName = mealNameInput.value.trim();
-  const mealCalories = parseInt(mealCaloriesInput.value.trim(), 10);
+    // Get the values from the form inputs
+    const mealName = document.getElementById('meal-name').value;
+    const mealCalories = parseInt(document.getElementById('meal-calories').value);
 
-  if (mealName && mealCalories) {
     // Create a new meal object
-    const meal = { name: mealName, calories: mealCalories };
+    const meal = {
+        name: mealName,
+        calories: mealCalories
+    };
 
     // Add the meal to the meal plan array
     mealPlan.push(meal);
 
-    // Display the meal in the meal plan container
-    const mealItem = document.createElement('div');
-    mealItem.innerHTML = `<span>${meal.name} - ${meal.calories} calories</span>`;
-    mealPlanContainer.appendChild(mealItem);
+    // Clear the form inputs
+    document.getElementById('meal-name').value = '';
+    document.getElementById('meal-calories').value = '';
 
-    // Clear the meal name and calories inputs
-    mealNameInput.value = '';
-    mealCaloriesInput.value = '';
-  }
+    // Render the updated meal plan
+    renderMealPlan();
+}
+
+// Function to render the meal plan
+function renderMealPlan() {
+    // Clear the existing content
+    mealPlanContainer.innerHTML = '';
+
+    // Render each meal in the meal plan
+    mealPlan.forEach((meal) => {
+        const mealItem = document.createElement('li');
+        mealItem.textContent = `${meal.name} - ${meal.calories} calories`;
+        mealPlanContainer.appendChild(mealItem);
+    });
+
+    // Update the total calories
+    const totalCalories = mealPlan.reduce((total, meal) => total + meal.calories, 0);
+    totalCaloriesContainer.textContent = `Total Calories: ${totalCalories}`;
+}
+
+// Function to save the meal plan to local storage
+function saveMealPlan() {
+    const mealPlanName = mealPlanNameInput.value;
+    if (mealPlanName.trim() === '') {
+        alert('Please enter a meal plan name.');
+        return;
+    }
+
+    const savedMealPlan = {
+        name: mealPlanName,
+        meals: mealPlan
+    };
+
+    savedMealPlans.push(savedMealPlan);
+    localStorage.setItem('savedMealPlans', JSON.stringify(savedMealPlans));
+
+    alert('Meal plan saved successfully!');
+    resetMealPlan();
+    renderSavedMealPlans();
+}
+
+// Function to reset the meal plan
+function resetMealPlan() {
+    mealPlan = [];
+    renderMealPlan();
+    mealPlanNameInput.value = '';
+}
+
+// Function to render the saved meal plans
+function renderSavedMealPlans() {
+    savedMealPlansContainer.innerHTML = '';
+
+    savedMealPlans.forEach((mealPlan, index) => {
+        const mealPlanItem = document.createElement('li');
+        mealPlanItem.innerHTML = `
+            <span>${mealPlan.name}</span>
+            <button onclick="viewMealPlan(${index})">View</button>
+            <button onclick="deleteMealPlan(${index})">Delete</button>
+        `;
+        savedMealPlansContainer.appendChild(mealPlanItem);
+    });
+}
+
+// Function to view a saved meal plan
+function viewMealPlan(index) {
+    const mealPlan = savedMealPlans[index].meals;
+    mealPlanNameInput.value = savedMealPlans[index].name;
+
+    // Update the meal plan and render it
+    resetMealPlan();
+    mealPlan.push(...mealPlan);
+    renderMealPlan();
+}
+
+// Function to delete a saved meal plan
+function deleteMealPlan(index) {
+    savedMealPlans.splice(index, 1);
+    localStorage.setItem('savedMealPlans', JSON.stringify(savedMealPlans));
+    renderSavedMealPlans();
+}
+
+// Add a click event listener to the create meal plan button
+createMealPlanBtn.addEventListener('click', function() {
+    // Show the meal input form
+    mealForm.style.display = 'block';
+    saveMealPlanBtn.style.display = 'inline-block';
+    createMealPlanBtn.style.display = 'none';
 });
 
-// Event listener for creating the meal plan
-createMealPlanButton.addEventListener('click', () => {
-  // Calculate the total calories
-  const totalCalories = mealPlan.reduce((sum, meal) => sum + meal.calories, 0);
+// Add a submit event listener to the meal form
+mealForm.addEventListener('submit', handleFormSubmit);
 
-  // Display the total calories
-  totalCaloriesContainer.textContent = `Total Calories: ${totalCalories}`;
+// Add a click event listener to the save meal plan button
+saveMealPlanBtn.addEventListener('click', saveMealPlan);
 
-  // Clear the meal plan array
-  mealPlan = [];
-  mealPlanContainer.innerHTML = '';
-});
+// Load the saved meal plans from local storage on page load
+function loadSavedMealPlans() {
+    const savedMealPlansData = localStorage.getItem('savedMealPlans');
+    if (savedMealPlansData) {
+        savedMealPlans = JSON.parse(savedMealPlansData);
+        renderSavedMealPlans();
+    }
+}
 
+loadSavedMealPlans();
