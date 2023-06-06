@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
+
 
 router.post('/', async (req, res) => {
   try {
@@ -58,4 +60,34 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const projectData = await User.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+
+      },
+    });
+
+    res.status(200).json(projectData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put('/:id', async (req, res) => {
+  try {
+    const newPic = await User.update(
+      req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      });
+    res.status(200).json(newPic);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
 module.exports = router;
