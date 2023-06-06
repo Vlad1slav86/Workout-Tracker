@@ -41,3 +41,6 @@ GET /public/css/main.css 404 158 - 1.694 ms
 GET /diet 304 - - 75.766 ms
 GET /public/css/main.css 404 158 - 2.088 ms
 GET /community 304 - - 6.711 ms
+GET / 200 937 - 25.522 ms
+GET /public/css/main.css 404 158 - 2.671 ms
+GET /favicon.ico 404 150 - 0.558 ms
