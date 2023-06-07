@@ -21,8 +21,9 @@
             <li><a href="/diet">Diet</a></li>
             <li><a href="/Community">Community</a></li>
             <li><button id="logout">Logout</button></li>
+                  {{!-- {{#each pictures as |picture|}} --}}
             <li><button id="dlt" class="deletebtn" data-id="{{ id }}">Delete</button></li>
-            
+                 {{!-- {{/each}} --}}
           </div>
 
         </div>
@@ -31,9 +32,16 @@
   </body>
 <form class="profileform">
 <div class="container">
+  
   <div class="card">
-    <div class="card card__image"><input class="form-control userimages" type="file" multiple/>
+            <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no"  class="card_img">
+       <div>
+
+      {{#each pictures as |picture|}}
+      <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100 card__image" />
+     {{/each}}
 </div>
+
     <p class="card__name">{{ name }}</p>
     <input type="hidden" class="img" value="{{ id }}">
     <div class="grid-container">
@@ -47,6 +55,8 @@
     <button class="btn draw-border">Follow</button>
     <button class="btn draw-border">Message</button>
     <button class="btn draw-border pstbtn">Post</button>
+   <input class="form-control userimages" type="file" multiple/>
+
 
   </div>
 </div>
@@ -58,9 +68,7 @@
      
         </div>
 
-          {{#each pictures as |picture|}}
-          <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100" />
-          {{/each}}
+
 
         <script src="/js/logout.js"></script>
         <script src="/js/delete-profile.js"></script>

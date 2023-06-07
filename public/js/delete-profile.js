@@ -1,3 +1,5 @@
+const deletebtn = document.querySelector('.deletebtn');
+const photos = document.querySelector('.userimages').files;
 
 const delBtn = async (event) => {
   if(event.target.hasAttribute('data-id')) {
@@ -14,4 +16,4 @@ const delBtn = async (event) => {
   }
 };
 
-document.addEventListener('click', delBtn);
+deletebtn.addEventListener('click', delBtn);

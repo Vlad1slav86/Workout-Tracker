@@ -49,3 +49,4 @@ User.hasMany(Picture, {
 });
 
 
+module.exports = { User, Post, Comment, Category, Picture };

@@ -60,6 +60,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await User.destroy({

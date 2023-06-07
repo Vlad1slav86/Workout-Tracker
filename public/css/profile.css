@@ -52,6 +52,7 @@
   z-index: 5;
   opacity: 0;
   cursor: pointer;
+  margin-left: 220px;
 }
 
 .nav-container .hamburger-lines {
@@ -65,6 +66,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 220px;
 }
 
 .nav-container .hamburger-lines .line {
@@ -96,7 +98,7 @@
   transform: translate(-150%);
   display: flex;
   flex-direction: column;
-  margin-left: -300px;
+  margin-left: -50px;
   padding-left: 50px;
   transition: transform 0.5s ease-in-out;
 }
@@ -187,7 +189,7 @@
 }
 
 .card__name {
-  margin-top: -35px;
+  margin-top: 35px;
   font-size: 1.5em;
 }
 
@@ -196,8 +198,10 @@
   width: 160px;
   border-radius: 50%;
   border: 5px solid #272133;
-  margin-top: 20px;
+  margin-top: -171px;
   box-shadow: 0 10px 50px rgb(250, 157, 25);
+  position: absolute;
+  margin-left: -84px;
 }
 
 
@@ -301,4 +305,24 @@
   margin-top: 68px;
   margin-left: -1px;
   width: 88px;
+}
+
+.userimages{
+  margin-top: -569px;
+  margin-left: -2px;
+  width: 96px;
+  opacity: 0;
+}
+
+.inputele{
+  margin-top: 20px;
+}
+
+.card_img {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  border: 5px solid #272133;
+  margin-top: 20px;
+  box-shadow: 0 10px 50px rgb(250, 157, 25);
 }
