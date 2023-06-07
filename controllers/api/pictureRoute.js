@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Picture } = require('../../models');
 const fs = require('fs');
+const withAuth = require('../../utils/auth');
+
 router.post('/', async (req, res) => {
   // function base64_encode(file) {
   //     // read binary data
@@ -23,6 +25,22 @@ router.post('/', async (req, res) => {
     res.status(200).json(picData);
   } catch (err) {
     console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const projectData = await Picture.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+
+      },
+    });
+
+    res.status(200).json(projectData);
+  } catch (err) {
     res.status(500).json(err);
   }
 });

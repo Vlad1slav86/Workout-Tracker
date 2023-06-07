@@ -1,0 +1,144 @@
+/* Workout Page */
+
+/* Header */
+header {
+    background-color: #de8509;
+    padding: 180px;
+    padding-bottom: 180px;
+    background-image: url(../images/ShapeShift\ Vladi\ Project.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Navigation */
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav li {
+    margin-right: 50px;
+  }
+  
+  nav li:last-child {
+    margin-right: 0;
+  }
+  
+  nav a {
+    display: grid;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    font-size: 40px;
+  }
+  
+  nav a:hover {
+    background-color: #de8509;
+    color: white;
+  }
+  
+  /* Body */
+  main {
+    background-color: white;
+    padding: 20px;
+    background-image: url("../images/home/Bckg-Img.png");
+    background-size: cover;
+  }
+  
+  /* Workout Form */
+  #workout-form {
+    margin-bottom: 20px;
+  }
+  
+  #workout-form label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  #workout-form input[type="number"],
+  #workout-form input[type="text"] {
+    width: 20%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #workout-form button {
+    margin-top: 20px;
+    background-color: #de8509;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #workout-form button:hover {
+    background-color: #333;
+  }
+  
+  /* Workout Results */
+  #workout-results {
+    margin-top: 20px;
+    display:flex;
+    flex-wrap: wrap;
+    background-color: #de8509;
+    font-size: 25px;
+  }
+  
+  #workout-results h2 {
+    margin-bottom: 10px;
+  }
+  
+  #workout-results ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #workout-results li {
+    margin-bottom: 5px;
+  }
+  
+
+/* Workout Section */
+.workout-section {
+  background-color: #de8509;
+  padding: 20px;
+  color: white;
+}
+
+.workout-section h2 {
+  margin-bottom: 10px;
+}
+
+.workout-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.workout-section ul li {
+  margin-bottom: 5px;
+}
+
+/* Warm Up Section */
+.warm-up-section {
+  grid-column: 1;
+}
+
+/* Exercise Section */
+.exercise-section {
+  grid-column: 2;
+}
+
+/* Cool Down Section */
+.cool-down-section {
+  grid-column: 3;
+}

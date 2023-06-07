@@ -1,3 +1,4 @@
+
 const { response } = require('express');
 
 const newFormHandler = async (event) => {
@@ -25,3 +26,4 @@ const newFormHandler = async (event) => {
 
 
 document.querySelector('.post').addEventListener('click', newFormHandler);
+

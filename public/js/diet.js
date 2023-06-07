@@ -5,6 +5,8 @@ const mincalories = document.querySelector('#mincalories');
 const submit = document.querySelector('#submit');
 const result = document.querySelector('.result');
 const Recipe = document.querySelector('.Recipe');
+const viewSavedMeals = document.getElementById('viewSavedMeals');
+const savedMeals = document.querySelector('.savedMeals');
 
 //const apiKey = process.env.api_key;
 //console.log(apiKey);
@@ -13,6 +15,7 @@ console.log(calories);
 console.log(submit);
 console.log(result);
 console.log(Recipe);
+
 
 submit.addEventListener('click', function (event) {
   event.preventDefault();
@@ -55,6 +58,7 @@ submit.addEventListener('click', function (event) {
 
         div.classList.add('card');
         h3.textContent = currentObj.title;
+        h3.classList.add('titles');
         img.setAttribute('src', currentObj.image);
         li.textContent = 'Calories: ' + currentObj.calories;
         lii.textContent = 'Carbs: ' + currentObj.carbs;
@@ -62,8 +66,8 @@ submit.addEventListener('click', function (event) {
         liiii.textContent = 'Protein: ' + currentObj.protein;
         button2.textContent = 'Get Recipe';
         button2.value = currentObj.id;
-        button3.textContent='Add to your Recipes';
-        button3.classList.add('class','button3');
+        button3.textContent = 'Add to your Recipes';
+        button3.classList.add('class', 'button3');
 
         ul.appendChild(li);
         ul.appendChild(lii);
@@ -142,11 +146,33 @@ result.addEventListener('click', function (event) {
   }
 });
 
-result.addEventListener('click', function (event) {
-  if (event.target.classList.contains('button3')) {
-    event.preventDefault();
-    Recipe.innerHTML = '';
-    console.log(event.target);
-  }
+viewSavedMeals.addEventListener('click', async function (event) {
+  event.preventDefault();
 
+  try {
+    const response = await fetch('/recipies');
+    if (response.ok) { 
+      const meals = await response.json();
+
+      console.log (meals);
+
+      for (i=0 ; i < meals.length; i++){
+        console.log (meals[i]);
+        var ul12 = document.createElement('ul');
+        var li122 = document.createElement('li');
+
+        li122.textContent=meals[i].Recipe_title;
+
+        ul12.appendChild(li122);
+        savedMeals.appendChild(ul12);
+
+      }
+
+      console.log(meals);
+    } else {
+      throw new Error('Failed to fetch saved meals');
+    }
+  } catch (error) {
+    console.error(error);
+  }
 });

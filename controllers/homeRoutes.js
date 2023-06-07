@@ -1,4 +1,4 @@
-const { Post, User, Comment, Picture } = require('../models');
+const { Post, User, Comment, Picture, diet } = require('../models');
 
 const router = require('express').Router();
 
@@ -144,6 +144,20 @@ router.get('/myprofile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/recipies', async (req, res) => {
+  try {
+    const dietPosts = await diet.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    });
+    const jsonData = JSON.stringify(dietPosts);
+    console.log(jsonData);
+    res.status(200).json(dietPosts);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 
 

@@ -176,7 +176,7 @@
 }
 
 .card {
-  background-color: #fff7f2;
+  background-color: #ffebdf;
   height: 27cm;
   border-radius: 5px;
   display: flex;
@@ -206,8 +206,8 @@
 
 
 .draw-border {
-  box-shadow: inset 0 0 0 4px #58cdd1;
-  color: #ffc041;
+  box-shadow: inset 0 0 0 4px black;
+  color: #de8509;
   -webkit-transition: color 0.25s 0.0833333333s;
   transition: color 0.25s 0.0833333333s;
   position: relative;
@@ -237,12 +237,12 @@
 }
 
 .draw-border:hover {
-  color: #ffe593;
+  color: #de8509;
 }
 
 .draw-border:hover::before,
 .draw-border:hover::after {
-  border-color: #ff8d22;
+  border-color: #de8509;
   -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
   transition: border-color 0s, width 0.25s, height 0.25s;
   width: 100%;
@@ -272,7 +272,7 @@
 }
 
 .btn:focus {
-  outline: 2px dotted #ffac3f;
+  outline: 2px dotted #de8509;
 }
 
 
@@ -293,8 +293,8 @@
 .usrbtn{
   height: 29.5px;
   margin-top: 10px;
-  box-shadow: inset 0 0 0 4px #58cdd1;
-  color: #ffc041;
+  box-shadow: inset 0 0 0 4px black;
+  color: #de8509;
   -webkit-transition: color 0.25s 0.0833333333s;
   transition: color 0.25s 0.0833333333s;
   position: relative;

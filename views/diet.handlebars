@@ -11,7 +11,7 @@
     <header>
         <nav>
             <ul class="navigation">
-                <li><a href="/workouts">Workouts</a></li>
+                <li><a href="/workout">Workouts</a></li>
                 <li><a href="/diet">Diet</a></li>
                 <li><a href="/community">Community</a></li>
                 <li><a href="/login">Login/Sign Up</a></li>
@@ -32,6 +32,9 @@
                 {{/each}}
             </ul>
         </div>
+        <div class="savedMeals">
+        <button id="viewSavedMeals">check saved meals</button>
+        
         <div class="meal-list">
             <h2>Meals</h2>
             <ul>
@@ -43,9 +46,9 @@
         <div class="content">
             <div class="input ">
                 <form class="fourm">
-                    <label for="calories">type your meal calories:</label>
+                    <label for="calories">type your meal Max calories:</label>
                     <input type="number" id="calories" name="calories">
-                    <label for="mincalories">type your meal calories:</label>
+                    <label for="mincalories">type your meal Min calories:</label>
                     <input type="number" id="mincalories" name="mincalories">
                 </form>
                 <br>
@@ -66,7 +69,7 @@
         <!-- Footer content here -->
     </footer>
 
-    <script src="/js/diet.js"></script>
+    <script src="/js/diets.js"></script>
 </body>
 
 </html>
