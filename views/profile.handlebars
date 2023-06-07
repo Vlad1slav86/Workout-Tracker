@@ -62,10 +62,13 @@
       </div>
     </div>
       <input name="number" class="usr"><button class="usrbtn">submit</button></input>
-      <h3 class="usrdata"></h3>
-    <button class="btn draw-border">Follow</button>
-    <button class="btn draw-border">Message</button>
-    <button class="btn draw-border pstbtn">Post</button>
+      <h3 class="usrdata">{{ about }}</h3>
+      <h3>Favorite Workout</h3>
+    <button class="btn draw-border"><a class="pstbutton" href="/workout">{{ workout }}</a></button>
+      <h3>Favorite PreWorkout</h3>
+    <button class="btn draw-border"><a class="pstbutton" href="https://{{ prewrkout }}.com">{{ prewrkout }}</a></button>
+      <h3>My Posts</h3>
+    <button class="btn draw-border pstbtn"><a class="pstbutton" href="/Community#bn-forum-1-1-2439437326/0/0/search/1/user/{{ name }}">Post</a></button>
    <input class="form-control userimages" type="file" multiple/>
 
 

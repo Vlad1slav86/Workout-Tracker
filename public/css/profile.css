@@ -308,10 +308,9 @@
 }
 
 .userimages{
-  margin-top: -569px;
+  margin-top: -744px;
   margin-left: -2px;
   width: 96px;
-  opacity: 0;
 }
 
 .inputele{
@@ -325,4 +324,9 @@
   border: 5px solid #272133;
   margin-top: 20px;
   box-shadow: 0 10px 50px rgb(250, 157, 25);
+}
+
+.pstbutton{
+  text-decoration: none;
+  color: #de8509;
 }

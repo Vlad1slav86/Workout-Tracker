@@ -126,6 +126,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
 
   nav ul {
     /* Mobile navigation list styles */
