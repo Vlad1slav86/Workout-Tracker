@@ -11,7 +11,7 @@ diet.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        user_name: {
+        user_id: {
             type: DataTypes.STRING,
             allowNull: false,
         },

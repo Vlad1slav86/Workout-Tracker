@@ -48,4 +48,8 @@ User.hasMany(Picture, {
   foreignKey: 'user_id'
 });
 
+diet.hasMany(User, {
+  foreignKey: 'user_id'
+}); 
 
+module.exports = { User, Post, Comment, Category, Picture,diet };
