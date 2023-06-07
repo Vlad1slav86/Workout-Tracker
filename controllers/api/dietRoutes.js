@@ -18,10 +18,10 @@ router.post('/postReci', async (req, res) => {
 router.get('/recipes', async (req, res) => {
   try {
     const dietPosts = await diet.findAll({
-    where: {
-      user_id: req.session.user_id
-    }
-  });
+      where: {
+        user_id: req.session.user_id
+      }
+    });
     res.status(200).json(dietPosts);
   } catch (error) {
     res.status(500).json({ error: error.message });

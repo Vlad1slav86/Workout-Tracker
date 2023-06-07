@@ -6,6 +6,7 @@ const newFormHandler = async (event) => {
   const user_id = document.querySelector('.img').value;
   if (about){
     console.log(photos);
+    console.log(about);
     const response = await (`/api/users/${user_id}`, {
       method: 'PUT',
       body: JSON.stringify({about}),
@@ -20,6 +21,7 @@ const newFormHandler = async (event) => {
         let formData = new FormData();
         formData.append('photo', photos[i]);
         formData.append('id', user_id);
+        formData.append('about',about);
         fetch('/api/picture', {
           method: 'POST',
           body: formData,

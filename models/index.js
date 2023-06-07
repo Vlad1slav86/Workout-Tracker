@@ -52,4 +52,6 @@ diet.hasMany(User, {
   foreignKey: 'user_id'
 }); 
 
-module.exports = { User, Post, Comment, Category, Picture,diet };
+
+
+module.exports = { User, Post, Comment, Category, Picture, diet, };

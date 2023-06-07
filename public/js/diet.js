@@ -1,12 +1,12 @@
 //require('dotenv').config();
 
-const calories = document.querySelector("#calories");
-const mincalories = document.querySelector("#mincalories");
-const submit = document.querySelector("#submit");
-const result = document.querySelector(".result");
-const Recipe = document.querySelector(".Recipe");
-const viewSavedMeals = document.getElementById("viewSavedMeals")
-const savedMeals = document.querySelector(".savedMeals");
+const calories = document.querySelector('#calories');
+const mincalories = document.querySelector('#mincalories');
+const submit = document.querySelector('#submit');
+const result = document.querySelector('.result');
+const Recipe = document.querySelector('.Recipe');
+const viewSavedMeals = document.getElementById('viewSavedMeals');
+const savedMeals = document.querySelector('.savedMeals');
 
 //const apiKey = process.env.api_key;
 //console.log(apiKey);
@@ -17,10 +17,10 @@ console.log(result);
 console.log(Recipe);
 
 
-submit.addEventListener("click", function (event) {
+submit.addEventListener('click', function (event) {
   event.preventDefault();
-  result.innerHTML = "";
-  Recipe.innerHTML = "";
+  result.innerHTML = '';
+  Recipe.innerHTML = '';
   tempnames = [];
 
   const input1 = calories.value;
@@ -66,7 +66,7 @@ submit.addEventListener("click", function (event) {
         liiii.textContent = 'Protein: ' + currentObj.protein;
         button2.textContent = 'Get Recipe';
         button2.value = currentObj.id;
-        button3.textContent = 'Add to your Recipes'
+        button3.textContent = 'Add to your Recipes';
         button3.classList.add('class', 'button3');
 
         ul.appendChild(li);
@@ -89,11 +89,11 @@ submit.addEventListener("click", function (event) {
     });
 });
 
-result.addEventListener("click", function (event) {
-  if (event.target.tagName === "BUTTON") {
+result.addEventListener('click', function (event) {
+  if (event.target.tagName === 'BUTTON') {
     var recipeId = event.target.value;
     event.preventDefault();
-    Recipe.innerHTML = "";
+    Recipe.innerHTML = '';
     console.log(recipeId);
 
     const apiUrl2 = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=82a8dcd5c2cb43b0a057879ca2ef7085`;
@@ -146,7 +146,7 @@ result.addEventListener("click", function (event) {
   }
 });
 
-viewSavedMeals.addEventListener("click", async function (event) {
+viewSavedMeals.addEventListener('click', async function (event) {
   event.preventDefault();
 
   try {
@@ -154,19 +154,19 @@ viewSavedMeals.addEventListener("click", async function (event) {
     if (response.ok) { 
       const meals = await response.json();
 
-      console.log (meals)
+      console.log (meals);
 
-     for (i=0 ; i < meals.length; i++){
-      console.log (meals[i])
-      var ul12 = document.createElement('ul');
-      var li122 = document.createElement('li');
+      for (i=0 ; i < meals.length; i++){
+        console.log (meals[i]);
+        var ul12 = document.createElement('ul');
+        var li122 = document.createElement('li');
 
-      li122.textContent=meals[i].Recipe_title;
+        li122.textContent=meals[i].Recipe_title;
 
-      ul12.appendChild(li122);
-      savedMeals.appendChild(ul12)
+        ul12.appendChild(li122);
+        savedMeals.appendChild(ul12);
 
-     }
+      }
 
       console.log(meals);
     } else {

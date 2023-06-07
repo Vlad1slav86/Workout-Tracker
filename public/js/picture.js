@@ -6,6 +6,8 @@ async function newFormHandler(event) {
   const city_location = document.querySelector(
     'input[name="post-city-location"]'
   ).value;
+  const about = document.querySelector('.usr').value;
+
   const trip_budget = document.querySelector('input[name="trip_budget"]').value;
   const photos = document.querySelector('.userimages').files;
   
@@ -34,6 +36,7 @@ async function newFormHandler(event) {
     console.log('response ok and photos present');
     for (let i = 0; i < photos.length; i++) {
       let formData = new FormData();
+      formData.append('about', about);
       formData.append('photo', photos[i]);
       formData.append('id', post_id);
       fetch('/api/pic', {
