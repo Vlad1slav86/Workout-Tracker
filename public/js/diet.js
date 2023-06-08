@@ -95,63 +95,63 @@ submit.addEventListener('click', function (event) {
 });
 
 
-result.addEventListener('click', function (event) {
-  if (event.target.tagName === 'BUTTON' && !event.target.classList.contains('button3')) 
-  {
-    var recipeId = event.target.value;
-    event.preventDefault();
-    Recipe.innerHTML = '';
-    console.log(recipeId);
+// result.addEventListener("click", function (event) {
+//   if (event.target.tagName === "BUTTON" && !event.target.classList.contains("button3")) 
+//     {
+//       var recipeId = event.target.value;
+//       event.preventDefault();
+//       Recipe.innerHTML = "";
+//       console.log(recipeId);
 
-    const apiUrl2 = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=82a8dcd5c2cb43b0a057879ca2ef7085`;
+//       const apiUrl2 = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=82a8dcd5c2cb43b0a057879ca2ef7085`;
 
-    fetch(apiUrl2)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        var div2 = document.createElement('div');
-        var h31 = document.createElement('h3');
-        var img1 = document.createElement('img');
-        var p1 = document.createElement('p');
-        var ul1 = document.createElement('ul');
-        var li1 = document.createElement('li');
-        var lii1 = document.createElement('li');
-        var liii1 = document.createElement('li');
-        var liiii1 = document.createElement('li');
-        var liiiii1 = document.createElement('li');
-        var p2 = document.createElement('p');
+//       fetch(apiUrl2)
+//         .then(response => response.json())
+//         .then(data => {
+//           console.log(data);
+//           var div2 = document.createElement('div');
+//           var h31 = document.createElement('h3');
+//           var img1 = document.createElement('img');
+//           var p1 = document.createElement('p');
+//           var ul1 = document.createElement('ul');
+//           var li1 = document.createElement('li');
+//           var lii1 = document.createElement('li');
+//           var liii1 = document.createElement('li');
+//           var liiii1 = document.createElement('li');
+//           var liiiii1 = document.createElement('li');
+//           var p2 = document.createElement('p');
 
-        div2.classList.add('card');
-        h31.textContent = data.title;
-        img1.setAttribute('src', data.image);
-        p1.textContent = data.instructions;
-        li1.textContent = `glutenFree: ${data.glutenFree}`;
-        lii1.textContent = `vegan: ${data.vegan}`;
-        liii1.textContent = `vegetarian: ${data.vegetarian}`;
-        liiii1.textContent = `veryHealthy: ${data.veryHealthy}`;
-        liiiii1.textContent = `weightWatcherSmartPoints: ${data.weightWatcherSmartPoints}`;
-        p2.textContent = data.summary;
+//           div2.classList.add('card');
+//           h31.textContent = data.title;
+//           img1.setAttribute('src', data.image);
+//           p1.textContent = data.instructions;
+//           li1.textContent = `glutenFree: ${data.glutenFree}`;
+//           lii1.textContent = `vegan: ${data.vegan}`;
+//           liii1.textContent = `vegetarian: ${data.vegetarian}`;
+//           liiii1.textContent = `veryHealthy: ${data.veryHealthy}`;
+//           liiiii1.textContent = `weightWatcherSmartPoints: ${data.weightWatcherSmartPoints}`;
+//           p2.textContent = data.summary;
 
-        ul1.appendChild(li1);
-        ul1.appendChild(lii1);
-        ul1.appendChild(liii1);
-        ul1.appendChild(liiii1);
-        ul1.appendChild(liiiii1);
+//           ul1.appendChild(li1);
+//           ul1.appendChild(lii1);
+//           ul1.appendChild(liii1);
+//           ul1.appendChild(liiii1);
+//           ul1.appendChild(liiiii1);
 
-        div2.appendChild(h31);
-        div2.appendChild(img1);
-        div2.appendChild(p1);
-        div2.appendChild(ul1);
-        div2.appendChild(p2);
+//           div2.appendChild(h31);
+//           div2.appendChild(img1);
+//           div2.appendChild(p1);
+//           div2.appendChild(ul1);
+//           div2.appendChild(p2);
 
-        Recipe.appendChild(div2);
+//           Recipe.appendChild(div2);
 
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }
-});
+//         })
+//         .catch(error => {
+//           console.error(error);
+//         });
+//     }
+//   });
 
 result.addEventListener('click', function (event) {
   if (event.target.tagName === 'BUTTON') {
