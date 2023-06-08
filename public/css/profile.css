@@ -177,15 +177,15 @@
 
 .card {
   background-color: #ffebdf;
-  height: 27cm;
+  height: 29cm;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.7);
   color: black;
-  margin-bottom: 100px;
-  position:static;
+  margin-bottom: 66px;
+  position:static
 }
 
 .card__name {
@@ -331,6 +331,5 @@
   color: #de8509;
 }
 
-.album{
-  margin-top: 3200px;
-}
+
+

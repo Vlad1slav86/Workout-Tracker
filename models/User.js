@@ -44,7 +44,7 @@ User.init(
       allowNull: true,
     },
     about: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
   },
   {

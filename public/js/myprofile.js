@@ -21,7 +21,6 @@ const newFormHandler = async (event) => {
         let formData = new FormData();
         formData.append('photo', photos[i]);
         formData.append('id', user_id);
-        formData.append('about',about);
         fetch('/api/picture', {
           method: 'POST',
           body: formData,
