@@ -1,3 +1,4 @@
+
 //require('dotenv').config();
 
 const calories = document.querySelector('#calories');
@@ -8,6 +9,7 @@ const Recipe = document.querySelector('.Recipe');
 const viewSavedMeals = document.getElementById('viewSavedMeals');
 const savedMeals = document.querySelector('.savedMeals');
 
+
 //const apiKey = process.env.api_key;
 //console.log(apiKey);
 
@@ -17,7 +19,9 @@ console.log(result);
 console.log(Recipe);
 
 
+
 submit.addEventListener('click', function (event) {
+
   event.preventDefault();
   result.innerHTML = '';
   Recipe.innerHTML = '';
@@ -53,8 +57,9 @@ submit.addEventListener('click', function (event) {
         var liii = document.createElement('li');
         var liiii = document.createElement('li');
         var button2 = document.createElement('button');
-        var br = document.createElement('br');
         var button3 = document.createElement('button');
+        var br = document.createElement('br');
+
 
         div.classList.add('card');
         h3.textContent = currentObj.title;
@@ -88,6 +93,65 @@ submit.addEventListener('click', function (event) {
       console.error(error);
     });
 });
+
+
+result.addEventListener("click", function (event) {
+  if (event.target.tagName === "BUTTON" && !event.target.classList.contains("button3")) 
+    {
+      var recipeId = event.target.value;
+      event.preventDefault();
+      Recipe.innerHTML = "";
+      console.log(recipeId);
+
+      const apiUrl2 = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=82a8dcd5c2cb43b0a057879ca2ef7085`;
+
+      fetch(apiUrl2)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          var div2 = document.createElement('div');
+          var h31 = document.createElement('h3');
+          var img1 = document.createElement('img');
+          var p1 = document.createElement('p');
+          var ul1 = document.createElement('ul');
+          var li1 = document.createElement('li');
+          var lii1 = document.createElement('li');
+          var liii1 = document.createElement('li');
+          var liiii1 = document.createElement('li');
+          var liiiii1 = document.createElement('li');
+          var p2 = document.createElement('p');
+
+          div2.classList.add('card');
+          h31.textContent = data.title;
+          img1.setAttribute('src', data.image);
+          p1.textContent = data.instructions;
+          li1.textContent = `glutenFree: ${data.glutenFree}`;
+          lii1.textContent = `vegan: ${data.vegan}`;
+          liii1.textContent = `vegetarian: ${data.vegetarian}`;
+          liiii1.textContent = `veryHealthy: ${data.veryHealthy}`;
+          liiiii1.textContent = `weightWatcherSmartPoints: ${data.weightWatcherSmartPoints}`;
+          p2.textContent = data.summary;
+
+          ul1.appendChild(li1);
+          ul1.appendChild(lii1);
+          ul1.appendChild(liii1);
+          ul1.appendChild(liiii1);
+          ul1.appendChild(liiiii1);
+
+          div2.appendChild(h31);
+          div2.appendChild(img1);
+          div2.appendChild(p1);
+          div2.appendChild(ul1);
+          div2.appendChild(p2);
+
+          Recipe.appendChild(div2);
+
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  });
 
 result.addEventListener('click', function (event) {
   if (event.target.tagName === 'BUTTON') {
@@ -146,13 +210,15 @@ result.addEventListener('click', function (event) {
   }
 });
 
+
 viewSavedMeals.addEventListener('click', async function (event) {
   event.preventDefault();
 
   try {
     const response = await fetch('/recipies');
-    if (response.ok) { 
+    if (response.ok) {
       const meals = await response.json();
+
 
       console.log (meals);
 
@@ -166,6 +232,7 @@ viewSavedMeals.addEventListener('click', async function (event) {
         ul12.appendChild(li122);
         savedMeals.appendChild(ul12);
 
+
       }
 
       console.log(meals);
@@ -174,5 +241,38 @@ viewSavedMeals.addEventListener('click', async function (event) {
     }
   } catch (error) {
     console.error(error);
+  }
+});
+
+
+result.addEventListener("click", async function (event) {
+  if (event.target.tagName === "BUTTON" && event.target.classList.contains("button3")) {
+    console.log(event.target);
+    event.preventDefault();
+    const userid = prompt("Please enter your user_id:");
+    const recipet = prompt("Please enter your Recipe_title:");
+
+    try {
+      const user_id = userid;
+      console.log(user_id);
+      const Recipe_title = recipet;
+
+      const recipeResponse = await fetch('/postReci', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user_id, Recipe_title })
+      });
+
+      if (recipeResponse.ok) {
+        const recipeSaved = await recipeResponse.json();
+        console.log(recipeSaved);
+      } else {
+        console.log('Recipe save failed');
+      }
+    } catch (error) {
+      console.error('Error occurred while saving recipe:', error);
+    }
   }
 });
