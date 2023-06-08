@@ -56,8 +56,15 @@ npm start
 
 Initial Page:
 
-![Initial Page]()
+![Initial Page](./public/images/Screenshot%202023-06-07%20at%208.37.45%20PM.png)
 
+Generated Meals:
+
+![Initial Page](./public/images/Screenshot%202023-06-07%20at%208.38.34%20PM.png)
+
+Community:
+
+![Initial Page](./public/images/Screenshot%202023-06-07%20at%208.39.00%20PM.png)
 
 ## Contributing
 

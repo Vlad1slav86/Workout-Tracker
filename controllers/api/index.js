@@ -4,11 +4,11 @@ const postRoutes = require('./postRoutes');
 const commentRoutes = require('./commentRoutes');
 const pictureRoutes = require('./pictureRoute');
 const dietRoutes = require ('./dietRoutes');
-
+const workoutRoutes = require('./workoutRoutes');
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
 router.use('/picture', pictureRoutes);
 router.use('/diet',dietRoutes);
-
+router.use('/workout',workoutRoutes);
 module.exports = router;
