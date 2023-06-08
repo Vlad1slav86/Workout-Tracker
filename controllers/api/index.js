@@ -3,7 +3,7 @@ const userRoutes = require('./userRoutes');
 const postRoutes = require('./postRoutes');
 const commentRoutes = require('./commentRoutes');
 const pictureRoutes = require('./pictureRoute');
-const dietRoutes = require ('./dietRoutes')
+const dietRoutes = require ('./dietRoutes');
 
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);

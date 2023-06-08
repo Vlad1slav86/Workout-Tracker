@@ -35,10 +35,17 @@ User.init(
         len: [8],
       },
     },
+    workout: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    prewrkout: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     about: {
-      type: DataTypes.TEXT,
-      
-    }
+      type: DataTypes.STRING,
+    },
   },
   {
     hooks: {
