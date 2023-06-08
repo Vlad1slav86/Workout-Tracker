@@ -154,7 +154,8 @@ submit.addEventListener('click', function (event) {
 //   });
 
 result.addEventListener('click', function (event) {
-  if (event.target.tagName === 'BUTTON') {
+  if (event.target.tagName === "BUTTON" && !event.target.classList.contains("button3"))  
+  {   
     var recipeId = event.target.value;
     event.preventDefault();
     Recipe.innerHTML = '';
