@@ -76,3 +76,8 @@ GET /login 304 - - 2.303 ms
 POST /api/users 400 1283 - 87.123 ms
 GET /login 304 - - 2.250 ms
 POST /api/users 400 1283 - 82.829 ms
+GET /community 304 - - 38.660 ms
+GET /public/images/home/Bckg-Img.png 404 170 - 7.696 ms
+GET /diet 304 - - 12.691 ms
+GET /diet 304 - - 10.988 ms
+GET /diet 304 - - 8.208 ms
