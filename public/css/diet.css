@@ -1,0 +1,35 @@
+* {
+    text-align: center;
+    line-height: 12px;
+    padding: 8px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+  }
+  
+  .form {
+    display: block;
+    border: solid #de8509 5px;
+  }
+  
+  .result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #de8509 5px;
+  }
+  
+  .cards {
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  li {
+    text-decoration: none;
+  }
+
+  
