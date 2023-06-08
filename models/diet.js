@@ -16,9 +16,7 @@ diet.init(
             allowNull: false,
         },
         Recipe_title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
+            type: DataTypes.STRING
         }
     },
     {

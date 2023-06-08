@@ -3,15 +3,16 @@ const { diet } = require('../../models');
 
 router.post('/postReci', async (req, res) => {
   try {
+    const { user_id, Recipe_title } = req.body;
+
     const newDiet = await diet.create({
-      ...req.body,
-      user_id: req.session.user_id,
-      Recipe_title: req.body.title 
+      user_id: user_id,
+      Recipe_title: Recipe_title,
     });
 
     res.status(200).json(newDiet);
   } catch (error) {
-    res.status(500).json(error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 
@@ -27,5 +28,6 @@ router.get('/recipes', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
 
 module.exports = router;
