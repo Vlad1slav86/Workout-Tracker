@@ -4,6 +4,7 @@ const newFormHandler = async (event) => {
   const about = document.querySelector('.usr').value;
   const photos = document.querySelector('.userimages').files;
   const user_id = document.querySelector('.img').value;
+  console.log(user_id);
   if (about){
     console.log(photos);
     console.log(about);
@@ -14,8 +15,9 @@ const newFormHandler = async (event) => {
         'Content-Type': 'application/json'
       },
     });
+    console.log(response);
     if(response.ok && !photos.length){
-      // document.location.replace('/profile');
+      document.location.replace('/profile');
     } else if(photos.length) {
       for (let i = 0; i < photos.length; i++) {
         let formData = new FormData();
@@ -31,7 +33,7 @@ const newFormHandler = async (event) => {
       }
     }
     else {
-      alert('Failed');
+      alert(response.statusText);
     }
   }
 };

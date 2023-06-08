@@ -83,6 +83,7 @@ router.post('/logout', (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
+    console.log('Hit');
     const newPic = await User.update(
       req.body,
       {
@@ -92,6 +93,7 @@ router.put('/:id', async (req, res) => {
       });
     res.status(200).json(newPic);
   } catch (error) {
+    console.log(error.message);
     res.status(500).json(error.message);
   }
 });
