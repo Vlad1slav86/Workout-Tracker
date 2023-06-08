@@ -50,6 +50,7 @@ npm start
 
 ## Usage
 
+Click on workouts
 
 ## Screenshots
 
