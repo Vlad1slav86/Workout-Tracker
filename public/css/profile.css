@@ -308,9 +308,9 @@
 }
 
 .userimages{
-  margin-top: -744px;
+  margin-top: -848px;
   margin-left: -2px;
-  width: 96px;
+  width: 87px;
 }
 
 .inputele{
@@ -342,4 +342,18 @@
   border: none;
 }
 
+
+.usrbtn2 {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  text-decoration: none;
+}
 

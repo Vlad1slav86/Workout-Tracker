@@ -1,3 +1,25 @@
+function uploadImage(){
+  let uploading = document.getElementById('uploadbtn');
+  uploading.style.display = 'block';
+  let choosefile = document.getElementById('fileChoose');
+  choosefile.style.display = 'none';
+  let picturenav = document.getElementById('picturenav');
+  picturenav.style.display = 'block';
+}
+
+function submitAppear(event){
+  event.preventDefault();
+  let submit = document.getElementById('submit');
+  submit.style.display = 'block';
+}
+
+function elementRemove (event){
+  event.preventDefault();
+  let usr = document.getElementById('hello');
+  usr.style.display = 'block';
+}
+
+
 const newFormHandler = async (event) => {
   event.preventDefault();
   console.log('click');
@@ -17,7 +39,14 @@ const newFormHandler = async (event) => {
   console.log(response);
   if(response.ok && !photos.length){
     document.location.replace('/myprofile');
-  } else if(photos.length) {
+
+  } 
+};
+const newPicture = (event) => {
+  event.preventDefault();
+  const user_id = document.querySelector('.img').value;
+  const photos = document.querySelector('.userimages').files;
+  if(photos.length) {
     for (let i = 0; i < photos.length; i++) {
       let formData = new FormData();
       formData.append('photo', photos[i]);
@@ -32,10 +61,10 @@ const newFormHandler = async (event) => {
     }
   }
   else {
-    alert(response.statusText);
+    alert('failed');
   }
-  
-};
+}
+;
 
 
 
@@ -47,6 +76,15 @@ const inputBtn = document.querySelector('.usrbtn');
 const form = document.querySelector('.profileform');
 const h3 = document.querySelector('.usrdata');
 const rememberMe = document.querySelector('.rememberme');
+const usrbutton2 = document.querySelector('.usrbtn2');
+const pstbtn = document.querySelector('.pstbtn');
+const uploadimgs = document.querySelector('.userimages');
 
-inputBtn.addEventListener('click', newFormHandler);
+
+
+inputBtn.addEventListener('click', newFormHandler,);
+usrbutton2.addEventListener('click', newPicture);
+pstbtn.addEventListener('click', elementRemove);
+input.addEventListener('click', submitAppear);
+uploadimgs.addEventListener('click', uploadImage);
 
