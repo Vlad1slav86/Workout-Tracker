@@ -177,15 +177,15 @@
 
 .card {
   background-color: #ffebdf;
-  height: 27cm;
+  height: 29cm;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.7);
   color: black;
-  margin-bottom: 100px;
-  position:static;
+  margin-bottom: 66px;
+  position:static
 }
 
 .card__name {
@@ -308,9 +308,9 @@
 }
 
 .userimages{
-  margin-top: -744px;
+  margin-top: -848px;
   margin-left: -2px;
-  width: 96px;
+  width: 87px;
 }
 
 .inputele{
@@ -331,6 +331,28 @@
   color: #de8509;
 }
 
-.album{
-  margin-top: 3200px;
+.picbtn{
+  height: 29.5px;
+  margin-top: 10px;
+  box-shadow: inset 0 0 0 4px black;
+  color: #de8509;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+  border: none;
+}
+
+
+.usrbtn2 {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  text-decoration: none;
 }
