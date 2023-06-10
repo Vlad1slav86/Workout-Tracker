@@ -33,6 +33,9 @@
 
             <li><button id="dlt" class="deletebtn" data-id="{{ picture.id }}">Delete</button></li>
                  {{/each}}
+             <li><button class="usrbtn2" style="display: none;" id="uploadbtn">UploadPicture</button></li>
+
+
 
           </div>
 
@@ -52,8 +55,8 @@
       <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100 card__image" />
      {{/each}}
 </div>
-
-    <p class="card__name">{{ name }}</p>
+    <p id="picturenav" style="display:none">upload picture in the navbar</p>
+    <h2 class="card__name">{{ name }}</h2>
     <input type="hidden" class="img" value="{{ id }}">
     <div class="grid-container">
 
@@ -61,16 +64,18 @@
         About me
       </div>
     </div>
-      <input name="number" class="usr"><button class="usrbtn">submit</button></input>
       <h3 class="usrdata">{{ about }}</h3>
+      <input name="number" class="usr" style="display:none" id="hello"><button class="usrbtn" style="display:none" id="submit">submit</button></input>
+
+    <button class="btn draw-border pstbtn">Add About</button>
       <h3>Favorite Workout</h3>
     <button class="btn draw-border"><a class="pstbutton" href="/workout">{{ workout }}</a></button>
       <h3>Favorite PreWorkout</h3>
     <button class="btn draw-border"><a class="pstbutton" href="http://localhost:3001/Community#bn-forum-1-1-2439437326/10777/1227003/show">{{ prewrkout }}</a></button>
       <h3>My Posts</h3>
     <button class="btn draw-border pstbtn"><a class="pstbutton" href="/Community#bn-forum-1-1-2439437326/0/0/search/1/user/{{ name }}">Post</a></button>
-    
-   <input class="form-control userimages" type="file" multiple/>
+    <input id="fileChoose" class="form-control userimages" type="file" name="img" style="display: block"/>
+
 </div>
   </div>
 </div>
@@ -90,4 +95,3 @@
         <script src="/js/logout.js"></script>
         <script src="/js/delete-profile.js"></script>
         <script src="/js/myprofile.js"></script>
-
